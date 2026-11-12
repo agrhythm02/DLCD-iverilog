@@ -1,0 +1,4138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#0-general-toolkit-%2Dicarus-verilog -->
+<html lang="en" data-color-mode="light" data-dark-theme="dark" data-light-theme="light">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'; script-src 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'unsafe-inline' https://cdnjs.cloudflare.com; img-src data: blob: https:; media-src data: blob: https:; font-src data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;">
+  <title>Markdown Export</title>
+  <link rel="stylesheet" href="./Markdown Export_files/github-markdown.min.css"
+    integrity="sha384-hZuxRjC/Dsr4zEx1JlUhDQqkvqBPp2VLHsgXfnxPq1ULDy1eIdWCiux7nvO1RIZP" crossorigin="anonymous">
+  <script>
+    window.MathJax = {
+      loader: { load: ['[tex]/ams', '[tex]/boldsymbol'] },
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        packages: { '[+]': ['ams', 'boldsymbol'] }
+      }
+    };
+  </script>
+  <script defer="" src="./Markdown Export_files/tex-mml-chtml.min.js.download"
+    integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW"
+    crossorigin="anonymous"></script>
+  <script src="./Markdown Export_files/mermaid.min.js.download"
+    integrity="sha384-zkWMJO4sgpPUzyuOgDx8HB/K55glbAwajEpk1Go2NWRuPkPA/wIhoEJTuSkmOYrV"
+    crossorigin="anonymous"></script>
+  <script defer="" src="./Markdown Export_files/abcjs-basic-min.js.download"
+    integrity="sha384-nxKtRsFgPYIlwn4dow7ndIEZj9Ud11cUkJdJVOUjHhm8dFHiL0+VF356f6xBzeaL"
+    crossorigin="anonymous"></script>
+  <style>
+    :root,
+    html,
+    body,
+    .markdown-body {
+      color-scheme: light !important;
+      --color-canvas-default: #ffffff !important;
+      --color-canvas-subtle: #f6f8fa !important;
+      --color-border-default: #d0d7de !important;
+      --color-border-muted: #d8dee4 !important;
+      --color-fg-default: #24292e !important;
+      --color-fg-muted: #57606a !important;
+      --color-fg-subtle: #6e7781 !important;
+    }
+
+    html {
+      background-color: #ffffff !important;
+    }
+
+    body {
+      margin: 0;
+      background-color: #ffffff !important;
+      color: #24292e !important;
+    }
+
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 100%;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 45px;
+      background-color: #ffffff !important;
+      color: #24292e !important;
+    }
+
+    .markdown-body table {
+      border-collapse: collapse !important;
+      width: 100% !important;
+    }
+
+    .markdown-body table tr {
+      background-color: #ffffff !important;
+      border-top: 1px solid #d8dee4 !important;
+    }
+
+    .markdown-body table tr:nth-child(2n) {
+      background-color: #f6f8fa !important;
+    }
+
+    .markdown-body table th,
+    .markdown-body table td {
+      border: 1px solid #d0d7de !important;
+      color: #24292e !important;
+    }
+
+    .markdown-body table th {
+      background-color: #f6f8fa !important;
+      font-weight: 600 !important;
+    }
+
+    .markdown-body table td {
+      background-color: transparent !important;
+    }
+
+    .markdown-body blockquote:not(.markdown-alert) {
+      color: #57606a !important;
+      border-left: 0.25em solid #d0d7de !important;
+      background-color: transparent !important;
+    }
+
+    .markdown-body hr {
+      background-color: #d0d7de !important;
+      border: 0 !important;
+      border-bottom: 1px solid #d0d7de !important;
+      height: 0.25em !important;
+    }
+
+    .markdown-body code,
+    .markdown-body tt {
+      background-color: rgba(175, 184, 193, 0.2) !important;
+      color: #24292e !important;
+    }
+
+    .markdown-body pre {
+      background-color: #f6f8fa !important;
+    }
+
+    .markdown-body pre code {
+      background-color: transparent !important;
+    }
+
+    .markdown-body>p,
+    .markdown-body>ul,
+    .markdown-body>ol,
+    .markdown-body>blockquote,
+    .markdown-body>h1,
+    .markdown-body>h2,
+    .markdown-body>h3,
+    .markdown-body>h4,
+    .markdown-body>h5,
+    .markdown-body>h6,
+    .markdown-body>pre,
+    .markdown-body>table,
+    .markdown-body>details,
+    .markdown-body>dl,
+    .markdown-body>hr {
+      max-width: 980px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+
+    /* Syntax Highlighting */
+    .hljs-doctag,
+    .hljs-keyword,
+    .hljs-template-tag,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable.language_ {
+      color: #d73a49;
+    }
+
+    .hljs-title,
+    .hljs-title.class_,
+    .hljs-title.class_.inherited__,
+    .hljs-title.function_ {
+      color: #6f42c1;
+    }
+
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-operator,
+    .hljs-variable,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id {
+      color: #005cc5;
+    }
+
+    .hljs-regexp,
+    .hljs-string,
+    .hljs-meta .hljs-string {
+      color: #032f62;
+    }
+
+    .hljs-built_in,
+    .hljs-symbol {
+      color: #e36209;
+    }
+
+    .hljs-comment,
+    .hljs-code,
+    .hljs-formula {
+      color: #6a737d;
+    }
+
+    .hljs-name,
+    .hljs-quote,
+    .hljs-selector-tag,
+    .hljs-selector-pseudo {
+      color: #22863a;
+    }
+
+    .hljs-subst {
+      color: #24292e;
+    }
+
+    .hljs-section {
+      color: #005cc5;
+      font-weight: bold;
+    }
+
+    .hljs-bullet {
+      color: #005cc5;
+    }
+
+    .hljs-emphasis {
+      font-style: italic;
+    }
+
+    .hljs-strong {
+      font-weight: bold;
+    }
+
+    .hljs-addition {
+      color: #22863a;
+      background-color: #f0fff4;
+    }
+
+    .hljs-deletion {
+      color: #b31d28;
+      background-color: #ffeef0;
+    }
+
+    .markdown-alert {
+      padding: 0.5rem 1rem;
+      margin-bottom: 16px;
+      border-left: 0.25em solid;
+      border-radius: 0.375rem;
+    }
+
+    .markdown-alert> :last-child {
+      margin-bottom: 0;
+    }
+
+    .markdown-alert-title {
+      margin: 0 0 8px;
+      font-weight: 600;
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .markdown-alert-icon {
+      display: inline-flex;
+      width: 16px;
+      height: 16px;
+    }
+
+    .markdown-alert-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .markdown-alert-note {
+      color: #0969da;
+      border-left-color: #0969da;
+      background-color: #ddf4ff;
+    }
+
+    .markdown-alert-tip {
+      color: #1a7f37;
+      border-left-color: #1a7f37;
+      background-color: #dafbe1;
+    }
+
+    .markdown-alert-important {
+      color: #8250df;
+      border-left-color: #8250df;
+      background-color: #fbefff;
+    }
+
+    .markdown-alert-warning {
+      color: #9a6700;
+      border-left-color: #9a6700;
+      background-color: #fff8c5;
+    }
+
+    .markdown-alert-caution {
+      color: #cf222e;
+      border-left-color: #cf222e;
+      background-color: #ffebe9;
+    }
+
+    .markdown-alert>*:not(.markdown-alert-title) {
+      color: #24292e;
+    }
+
+    .frontmatter-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    .frontmatter-table th,
+    .frontmatter-table td {
+      border: 1px solid #e1e4e8;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    .frontmatter-table th {
+      font-weight: 600;
+      background-color: #f6f8fa;
+      width: 150px;
+    }
+
+    /* Footnote styles */
+    .footnotes {
+      margin-top: 1.5rem;
+      font-size: 0.9em;
+      border-top: 1px solid #eaecef;
+      padding-top: 8px;
+    }
+
+    .footnotes ol {
+      padding-left: 1.5em;
+    }
+
+    .footnotes ol>li::marker {
+      content: "[" counter(list-item) "] ";
+      font-weight: 600;
+    }
+
+    .footnotes li>p {
+      margin: 0.2em 0;
+    }
+
+    .footnote-ref a,
+    .footnote-backref {
+      text-decoration: none;
+    }
+
+    .footnote-backref {
+      margin-left: 0.4em;
+    }
+
+    a.reference-link {
+      font-size: 0.75em;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      vertical-align: super;
+      position: relative;
+      top: 0.08em;
+    }
+
+    /* Mermaid and Math styles */
+    .mermaid-container {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .math-block {
+      margin: 1em 0;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .abc-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1.5em 0;
+      padding: 1.25em;
+      background-color: #f6f8fa;
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    .abc-notation {
+      width: 100%;
+    }
+
+    .abc-notation svg {
+      background: transparent !important;
+      color: #24292e !important;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .abc-notation svg path {
+      fill: currentColor;
+    }
+
+    .abc-notation svg text {
+      fill: currentColor !important;
+      stroke: none !important;
+    }
+
+    .abc-notation svg .abcjs-staff,
+    .abc-notation svg .abcjs-staff-extra,
+    .abc-notation svg .abcjs-bar,
+    .abc-notation svg .abcjs-ledger,
+    .abc-notation svg .abcjs-stem,
+    .abc-notation svg .abcjs-beam,
+    .abc-notation svg .abcjs-slur,
+    .abc-notation svg .abcjs-tie {
+      stroke: currentColor !important;
+    }
+
+    .abc-notation svg .abcjs-staff,
+    .abc-notation svg .abcjs-staff-extra,
+    .abc-notation svg .abcjs-ledger,
+    .abc-notation svg .abcjs-slur,
+    .abc-notation svg .abcjs-tie,
+    .abc-notation svg .abcjs-stem {
+      fill: none !important;
+    }
+
+    .abc-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .diagram-status,
+    .diagram-toolbar,
+    .mermaid-toolbar,
+    .abc-toolbar {
+      display: none !important;
+    }
+
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+  <script src="./Markdown Export_files/boldsymbol.js.download" charset="UTF-8"></script>
+  <style type="text/css">
+    .CtxtMenu_InfoClose {
+      top: .2em;
+      right: .2em;
+    }
+
+    .CtxtMenu_InfoContent {
+      overflow: auto;
+      text-align: left;
+      font-size: 80%;
+      padding: .4em .6em;
+      border: 1px inset;
+      margin: 1em 0px;
+      max-height: 20em;
+      max-width: 30em;
+      background-color: #EEEEEE;
+      white-space: normal;
+    }
+
+    .CtxtMenu_Info.CtxtMenu_MousePost {
+      outline: none;
+    }
+
+    .CtxtMenu_Info {
+      position: fixed;
+      left: 50%;
+      width: auto;
+      text-align: center;
+      border: 3px outset;
+      padding: 1em 2em;
+      background-color: #DDDDDD;
+      color: black;
+      cursor: default;
+      font-family: message-box;
+      font-size: 120%;
+      font-style: normal;
+      text-indent: 0;
+      text-transform: none;
+      line-height: normal;
+      letter-spacing: normal;
+      word-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      float: none;
+      z-index: 201;
+      border-radius: 15px;
+      /* Opera 10.5 and IE9 */
+      -webkit-border-radius: 15px;
+      /* Safari and Chrome */
+      -moz-border-radius: 15px;
+      /* Firefox */
+      -khtml-border-radius: 15px;
+      /* Konqueror */
+      box-shadow: 0px 10px 20px #808080;
+      /* Opera 10.5 and IE9 */
+      -webkit-box-shadow: 0px 10px 20px #808080;
+      /* Safari 3 & Chrome */
+      -moz-box-shadow: 0px 10px 20px #808080;
+      /* Forefox 3.5 */
+      -khtml-box-shadow: 0px 10px 20px #808080;
+      /* Konqueror */
+      filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true");
+      /* IE */
+    }
+  </style>
+  <style type="text/css">
+    .CtxtMenu_MenuClose {
+      position: absolute;
+      cursor: pointer;
+      display: inline-block;
+      border: 2px solid #AAA;
+      border-radius: 18px;
+      -webkit-border-radius: 18px;
+      /* Safari and Chrome */
+      -moz-border-radius: 18px;
+      /* Firefox */
+      -khtml-border-radius: 18px;
+      /* Konqueror */
+      font-family: "Courier New", Courier;
+      font-size: 24px;
+      color: #F0F0F0
+    }
+
+    .CtxtMenu_MenuClose span {
+      display: block;
+      background-color: #AAA;
+      border: 1.5px solid;
+      border-radius: 18px;
+      -webkit-border-radius: 18px;
+      /* Safari and Chrome */
+      -moz-border-radius: 18px;
+      /* Firefox */
+      -khtml-border-radius: 18px;
+      /* Konqueror */
+      line-height: 0;
+      padding: 8px 0 6px
+        /* may need to be browser-specific */
+    }
+
+    .CtxtMenu_MenuClose:hover {
+      color: white !important;
+      border: 2px solid #CCC !important
+    }
+
+    .CtxtMenu_MenuClose:hover span {
+      background-color: #CCC !important
+    }
+
+    .CtxtMenu_MenuClose:hover:focus {
+      outline: none
+    }
+  </style>
+  <style type="text/css">
+    .CtxtMenu_Menu {
+      position: absolute;
+      background-color: white;
+      color: black;
+      width: auto;
+      padding: 5px 0px;
+      border: 1px solid #CCCCCC;
+      margin: 0;
+      cursor: default;
+      font: menu;
+      text-align: left;
+      text-indent: 0;
+      text-transform: none;
+      line-height: normal;
+      letter-spacing: normal;
+      word-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      float: none;
+      z-index: 201;
+      border-radius: 5px;
+      /* Opera 10.5 and IE9 */
+      -webkit-border-radius: 5px;
+      /* Safari and Chrome */
+      -moz-border-radius: 5px;
+      /* Firefox */
+      -khtml-border-radius: 5px;
+      /* Konqueror */
+      box-shadow: 0px 10px 20px #808080;
+      /* Opera 10.5 and IE9 */
+      -webkit-box-shadow: 0px 10px 20px #808080;
+      /* Safari 3 & Chrome */
+      -moz-box-shadow: 0px 10px 20px #808080;
+      /* Forefox 3.5 */
+      -khtml-box-shadow: 0px 10px 20px #808080;
+      /* Konqueror */
+    }
+
+    .CtxtMenu_MenuItem {
+      padding: 1px 2em;
+      background: transparent;
+    }
+
+    .CtxtMenu_MenuArrow {
+      position: absolute;
+      right: .5em;
+      padding-top: .25em;
+      color: #666666;
+      font-family: null;
+      font-size: .75em
+    }
+
+    .CtxtMenu_MenuActive .CtxtMenu_MenuArrow {
+      color: white
+    }
+
+    .CtxtMenu_MenuArrow.CtxtMenu_RTL {
+      left: .5em;
+      right: auto
+    }
+
+    .CtxtMenu_MenuCheck {
+      position: absolute;
+      left: .7em;
+      font-family: null
+    }
+
+    .CtxtMenu_MenuCheck.CtxtMenu_RTL {
+      right: .7em;
+      left: auto
+    }
+
+    .CtxtMenu_MenuRadioCheck {
+      position: absolute;
+      left: .7em;
+    }
+
+    .CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {
+      right: .7em;
+      left: auto
+    }
+
+    .CtxtMenu_MenuInputBox {
+      padding-left: 1em;
+      right: .5em;
+      color: #666666;
+      font-family: null;
+    }
+
+    .CtxtMenu_MenuInputBox.CtxtMenu_RTL {
+      left: .1em;
+    }
+
+    .CtxtMenu_MenuComboBox {
+      left: .1em;
+      padding-bottom: .5em;
+    }
+
+    .CtxtMenu_MenuSlider {
+      left: .1em;
+    }
+
+    .CtxtMenu_SliderValue {
+      position: absolute;
+      right: .1em;
+      padding-top: .25em;
+      color: #333333;
+      font-size: .75em
+    }
+
+    .CtxtMenu_SliderBar {
+      outline: none;
+      background: #d3d3d3
+    }
+
+    .CtxtMenu_MenuLabel {
+      padding: 1px 2em 3px 1.33em;
+      font-style: italic
+    }
+
+    .CtxtMenu_MenuRule {
+      border-top: 1px solid #DDDDDD;
+      margin: 4px 3px;
+    }
+
+    .CtxtMenu_MenuDisabled {
+      color: GrayText
+    }
+
+    .CtxtMenu_MenuActive {
+      background-color: #606872;
+      color: white;
+    }
+
+    .CtxtMenu_MenuDisabled:focus {
+      background-color: #E8E8E8
+    }
+
+    .CtxtMenu_MenuLabel:focus {
+      background-color: #E8E8E8
+    }
+
+    .CtxtMenu_ContextMenu:focus {
+      outline: none
+    }
+
+    .CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {
+      outline: none
+    }
+
+    .CtxtMenu_SelectionMenu {
+      position: relative;
+      float: left;
+      border-bottom: none;
+      -webkit-box-shadow: none;
+      -webkit-border-radius: 0px;
+    }
+
+    .CtxtMenu_SelectionItem {
+      padding-right: 1em;
+    }
+
+    .CtxtMenu_Selection {
+      right: 40%;
+      width: 50%;
+    }
+
+    .CtxtMenu_SelectionBox {
+      padding: 0em;
+      max-height: 20em;
+      max-width: none;
+      background-color: #FFFFFF;
+    }
+
+    .CtxtMenu_SelectionDivider {
+      clear: both;
+      border-top: 2px solid #000000;
+    }
+
+    .CtxtMenu_Menu .CtxtMenu_MenuClose {
+      top: -10px;
+      left: -10px
+    }
+  </style>
+  <style id="MJX-CHTML-styles">
+    mjx-container[jax="CHTML"] {
+      line-height: 0;
+    }
+
+    mjx-container [space="1"] {
+      margin-left: .111em;
+    }
+
+    mjx-container [space="2"] {
+      margin-left: .167em;
+    }
+
+    mjx-container [space="3"] {
+      margin-left: .222em;
+    }
+
+    mjx-container [space="4"] {
+      margin-left: .278em;
+    }
+
+    mjx-container [space="5"] {
+      margin-left: .333em;
+    }
+
+    mjx-container [rspace="1"] {
+      margin-right: .111em;
+    }
+
+    mjx-container [rspace="2"] {
+      margin-right: .167em;
+    }
+
+    mjx-container [rspace="3"] {
+      margin-right: .222em;
+    }
+
+    mjx-container [rspace="4"] {
+      margin-right: .278em;
+    }
+
+    mjx-container [rspace="5"] {
+      margin-right: .333em;
+    }
+
+    mjx-container [size="s"] {
+      font-size: 70.7%;
+    }
+
+    mjx-container [size="ss"] {
+      font-size: 50%;
+    }
+
+    mjx-container [size="Tn"] {
+      font-size: 60%;
+    }
+
+    mjx-container [size="sm"] {
+      font-size: 85%;
+    }
+
+    mjx-container [size="lg"] {
+      font-size: 120%;
+    }
+
+    mjx-container [size="Lg"] {
+      font-size: 144%;
+    }
+
+    mjx-container [size="LG"] {
+      font-size: 173%;
+    }
+
+    mjx-container [size="hg"] {
+      font-size: 207%;
+    }
+
+    mjx-container [size="HG"] {
+      font-size: 249%;
+    }
+
+    mjx-container [width="full"] {
+      width: 100%;
+    }
+
+    mjx-box {
+      display: inline-block;
+    }
+
+    mjx-block {
+      display: block;
+    }
+
+    mjx-itable {
+      display: inline-table;
+    }
+
+    mjx-row {
+      display: table-row;
+    }
+
+    mjx-row>* {
+      display: table-cell;
+    }
+
+    mjx-mtext {
+      display: inline-block;
+    }
+
+    mjx-mstyle {
+      display: inline-block;
+    }
+
+    mjx-merror {
+      display: inline-block;
+      color: red;
+      background-color: yellow;
+    }
+
+    mjx-mphantom {
+      visibility: hidden;
+    }
+
+    _::-webkit-full-page-media,
+    _:future,
+    :root mjx-container {
+      will-change: opacity;
+    }
+
+    mjx-assistive-mml {
+      position: absolute !important;
+      top: 0px;
+      left: 0px;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 1px 0px 0px 0px !important;
+      border: 0px !important;
+      display: block !important;
+      width: auto !important;
+      overflow: hidden !important;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    mjx-assistive-mml[display="block"] {
+      width: 100% !important;
+    }
+
+    mjx-c::before {
+      display: block;
+      width: 0;
+    }
+
+    .MJX-TEX {
+      font-family: MJXZERO, MJXTEX;
+    }
+
+    .TEX-B {
+      font-family: MJXZERO, MJXTEX-B;
+    }
+
+    .TEX-I {
+      font-family: MJXZERO, MJXTEX-I;
+    }
+
+    .TEX-MI {
+      font-family: MJXZERO, MJXTEX-MI;
+    }
+
+    .TEX-BI {
+      font-family: MJXZERO, MJXTEX-BI;
+    }
+
+    .TEX-S1 {
+      font-family: MJXZERO, MJXTEX-S1;
+    }
+
+    .TEX-S2 {
+      font-family: MJXZERO, MJXTEX-S2;
+    }
+
+    .TEX-S3 {
+      font-family: MJXZERO, MJXTEX-S3;
+    }
+
+    .TEX-S4 {
+      font-family: MJXZERO, MJXTEX-S4;
+    }
+
+    .TEX-A {
+      font-family: MJXZERO, MJXTEX-A;
+    }
+
+    .TEX-C {
+      font-family: MJXZERO, MJXTEX-C;
+    }
+
+    .TEX-CB {
+      font-family: MJXZERO, MJXTEX-CB;
+    }
+
+    .TEX-FR {
+      font-family: MJXZERO, MJXTEX-FR;
+    }
+
+    .TEX-FRB {
+      font-family: MJXZERO, MJXTEX-FRB;
+    }
+
+    .TEX-SS {
+      font-family: MJXZERO, MJXTEX-SS;
+    }
+
+    .TEX-SSB {
+      font-family: MJXZERO, MJXTEX-SSB;
+    }
+
+    .TEX-SSI {
+      font-family: MJXZERO, MJXTEX-SSI;
+    }
+
+    .TEX-SC {
+      font-family: MJXZERO, MJXTEX-SC;
+    }
+
+    .TEX-T {
+      font-family: MJXZERO, MJXTEX-T;
+    }
+
+    .TEX-V {
+      font-family: MJXZERO, MJXTEX-V;
+    }
+
+    .TEX-VB {
+      font-family: MJXZERO, MJXTEX-VB;
+    }
+
+    mjx-stretchy-v mjx-c,
+    mjx-stretchy-h mjx-c {
+      font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+    }
+
+    @font-face
+
+    /* 0 */
+      {
+      font-family: MJXZERO;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 1 */
+      {
+      font-family: MJXTEX;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 2 */
+      {
+      font-family: MJXTEX-B;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 3 */
+      {
+      font-family: MJXTEX-I;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 4 */
+      {
+      font-family: MJXTEX-MI;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 5 */
+      {
+      font-family: MJXTEX-BI;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 6 */
+      {
+      font-family: MJXTEX-S1;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 7 */
+      {
+      font-family: MJXTEX-S2;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 8 */
+      {
+      font-family: MJXTEX-S3;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 9 */
+      {
+      font-family: MJXTEX-S4;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 10 */
+      {
+      font-family: MJXTEX-A;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 11 */
+      {
+      font-family: MJXTEX-C;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 12 */
+      {
+      font-family: MJXTEX-CB;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 13 */
+      {
+      font-family: MJXTEX-FR;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 14 */
+      {
+      font-family: MJXTEX-FRB;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 15 */
+      {
+      font-family: MJXTEX-SS;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 16 */
+      {
+      font-family: MJXTEX-SSB;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 17 */
+      {
+      font-family: MJXTEX-SSI;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 18 */
+      {
+      font-family: MJXTEX-SC;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 19 */
+      {
+      font-family: MJXTEX-T;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 20 */
+      {
+      font-family: MJXTEX-V;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 21 */
+      {
+      font-family: MJXTEX-VB;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+    }
+  </style>
+</head>
+
+<body>
+  <article class="markdown-body" style="max-width: 980px;">
+    <h1 id="dlcd-lab-test-prep--verilog--icarus-verilog-labs-29">DLCD Lab Test Prep — Verilog / Icarus Verilog (Labs
+      2–9)</h1>
+    <blockquote>
+      <p>UE24CS251A · Concepts + code cheat sheet per lab, followed by MCQs. Click <strong>Answer</strong> under each
+        question to reveal it.<br>Section 0 is the shared toolkit (Icarus flow, syntax, testbench skeleton). Labs 2–9
+        follow the lab problem statements.</p>
+    </blockquote>
+    <h2 id="contents">Contents</h2>
+    <ol start="0">
+      <li><a
+          href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#0-general-toolkit--icarus-verilog">General
+          toolkit + Icarus Verilog</a></li>
+      <li><a
+          href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#lab-2--logic-gates-and-gate-level-structural-circuits">Lab
+          2 — Gates &amp; structural circuits</a></li>
+      <li><a
+          href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#lab-3--mux-decoder-priority-encoder-structural">Lab
+          3 — MUX, Decoder, Priority Encoder (structural)</a></li>
+      <li><a href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#lab-4--data-flow-modelling">Lab 4 —
+          Data-flow modelling</a></li>
+      <li><a href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#lab-5--sequential-circuits">Lab 5 —
+          Sequential: SR latch, D-FF, enabled D-FF</a></li>
+      <li><a
+          href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#lab-6--full-adder-and-8-bit-ripple-carry-adder">Lab
+          6 — Full Adder &amp; 8-bit Ripple-Carry Adder</a></li>
+      <li><a href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#lab-7--16-bit-alu">Lab 7 — 16-bit
+          ALU</a></li>
+      <li><a href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#lab-8--32-bit-comparators">Lab 8 —
+          32-bit Comparators</a></li>
+      <li><a href="file:///C:/Users/ADMIN/Downloads/Welcome%20to%20Markdown.html#lab-9--register-file-8--16-bit">Lab 9 —
+          Register File (8 × 16-bit)</a></li>
+    </ol>
+    <hr>
+    <h1 id="0-general-toolkit--icarus-verilog">0. General toolkit + Icarus Verilog</h1>
+    <h2 id="01-icarus-flow-compile--run--view">0.1 Icarus flow (compile → run → view)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Step</th>
+          <th>Command</th>
+          <th>What it does</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Compile</td>
+          <td><code>iverilog -o sim design.v tb.v</code></td>
+          <td>Compiles all files into executable <code>sim</code> (vvp bytecode). <code>-o</code> = output name</td>
+        </tr>
+        <tr>
+          <td>Run</td>
+          <td><code>vvp sim</code></td>
+          <td>Runs the simulation; prints <code>$display/$monitor</code>; writes the <code>.vcd</code></td>
+        </tr>
+        <tr>
+          <td>View</td>
+          <td><code>gtkwave wave.vcd</code></td>
+          <td>Opens waveform viewer</td>
+        </tr>
+        <tr>
+          <td>Standard</td>
+          <td><code>iverilog -g2012 -o sim ...</code></td>
+          <td>Pick language generation (<code>-g2005</code>, <code>-g2012</code>)</td>
+        </tr>
+        <tr>
+          <td>Top module</td>
+          <td><code>iverilog -s tb -o sim ...</code></td>
+          <td><code>-s</code> = choose top-level module</td>
+        </tr>
+        <tr>
+          <td>Warnings</td>
+          <td><code>iverilog -Wall ...</code></td>
+          <td>Enable all warnings</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>Default output if <code>-o</code> omitted: <code>a.out</code>. Compile errors → no executable. The
+        <code>.vcd</code> file name comes from <code>$dumpfile("name.vcd")</code>, <strong>not</strong> from
+        <code>-o</code>.
+      </li>
+      <li>Simulation ends at <code>$finish</code>; without it (and with an endless <code>always #5 clk=~clk</code>)
+        simulation runs forever.</li>
+    </ul>
+    <h2 id="02-core-syntax">0.2 Core syntax</h2>
+    <pre><code class="hljs plaintext">`timescale 1ns/1ps          // time unit / precision
+
+module name (input a, b, output y);   // ANSI-style ports
+  wire w1;                            // net: driven by gates / assign
+  reg  r;                             // variable: assigned in initial/always
+  and  g1 (w1, a, b);                 // gate primitive: OUTPUT FIRST, then inputs
+  assign y = w1 | a;                  // continuous assignment
+endmodule</code></pre>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Rule</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gate primitives</td>
+          <td><code>and or not nand nor xor xnor buf</code> — first terminal is output</td>
+        </tr>
+        <tr>
+          <td>Number literals</td>
+          <td><code>&lt;size&gt;'&lt;base&gt;&lt;value&gt;</code> → <code>4'b1010</code>, <code>8'hFF</code>,
+            <code>16'd25</code>; unsized decimals are 32-bit
+          </td>
+        </tr>
+        <tr>
+          <td>Vectors</td>
+          <td><code>wire [7:0] a;</code> → bit 7 is MSB; <code>a[3]</code> bit-select; <code>a[3:0]</code> part-select
+          </td>
+        </tr>
+        <tr>
+          <td>Concatenation</td>
+          <td><code>{a, b}</code>; replication <code>{4{1'b1}}</code> = <code>1111</code></td>
+        </tr>
+        <tr>
+          <td>Logic values</td>
+          <td><code>0, 1, x</code> (unknown), <code>z</code> (high-impedance)</td>
+        </tr>
+        <tr>
+          <td>Bitwise</td>
+          <td><code>&amp; | ^ ~ ~^</code></td>
+        </tr>
+        <tr>
+          <td>Logical</td>
+          <td><code>&amp;&amp; || !</code> (result 1 bit)</td>
+        </tr>
+        <tr>
+          <td>Reduction</td>
+          <td><code>&amp;a  |a  ^a</code> (reduce vector to 1 bit)</td>
+        </tr>
+        <tr>
+          <td>Conditional</td>
+          <td><code>s ? a : b</code></td>
+        </tr>
+        <tr>
+          <td>Shift</td>
+          <td><code>&lt;&lt;  &gt;&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Equality</td>
+          <td><code>==</code> (x if any x) vs <code>===</code> (case equality, exact match incl. x/z)</td>
+        </tr>
+        <tr>
+          <td>Blocking <code>=</code></td>
+          <td>Executes in order — used in testbench <code>initial</code> / combinational <code>always</code></td>
+        </tr>
+        <tr>
+          <td>Non-blocking <code>&lt;=</code></td>
+          <td>Scheduled, updates at end of time step — used for clocked (sequential) logic</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="03-testbench-skeleton">0.3 Testbench skeleton</h2>
+    <pre><code class="hljs plaintext">`timescale 1ns/1ps
+module tb;
+  reg  a, b;            // DUT inputs  -&gt; reg
+  wire y;               // DUT outputs -&gt; wire
+
+  my_design dut (.a(a), .b(b), .y(y));   // named port connection
+
+  initial begin
+    $dumpfile("wave.vcd");   // output file for GTKWave
+    $dumpvars(0, tb);        // dump all signals in tb (0 = all levels)
+    $monitor("t=%0t a=%b b=%b y=%b", $time, a, b, y);
+    a=0; b=0; #10;
+    a=0; b=1; #10;
+    a=1; b=0; #10;
+    a=1; b=1; #10;
+    $finish;
+  end
+endmodule</code></pre>
+    <table>
+      <thead>
+        <tr>
+          <th>System task</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$display</code></td>
+          <td>Print once, when executed (adds newline)</td>
+        </tr>
+        <tr>
+          <td><code>$monitor</code></td>
+          <td>Auto-print <strong>every time</strong> any argument changes (one active monitor)</td>
+        </tr>
+        <tr>
+          <td><code>$strobe</code></td>
+          <td>Print at end of current time step</td>
+        </tr>
+        <tr>
+          <td><code>$time</code></td>
+          <td>Current simulation time</td>
+        </tr>
+        <tr>
+          <td><code>$finish</code></td>
+          <td>End simulation (<code>$stop</code> pauses)</td>
+        </tr>
+        <tr>
+          <td><code>$dumpfile / $dumpvars</code></td>
+          <td>Create VCD / choose signals to record</td>
+        </tr>
+        <tr>
+          <td><code>$random</code></td>
+          <td>32-bit signed pseudo-random</td>
+        </tr>
+        <tr>
+          <td>Format</td>
+          <td><code>%b</code> binary, <code>%d</code> decimal, <code>%h</code> hex, <code>%t</code> time,
+            <code>%0d</code> no padding
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Clock generation: <code>initial clk=0; always #5 clk = ~clk;</code> → period = 10 units.</p>
+    <hr>
+    <h2 id="04-mcqs--icarus-verilog--testbench-basics">0.4 MCQs — Icarus Verilog &amp; testbench basics</h2>
+    <p><strong>Q1.</strong> Which command compiles <code>design.v</code> and <code>tb.v</code> into an executable named
+      <code>sim</code>?
+    </p>
+    <ul>
+      <li>A) <code>vvp sim design.v tb.v</code></li>
+      <li>B) <code>iverilog -o sim design.v tb.v</code></li>
+      <li>C) <code>gtkwave sim</code></li>
+      <li>D) <code>iverilog sim design.v tb.v</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>iverilog -o &lt;out&gt; files...</code> compiles; <code>vvp</code> runs;
+        <code>gtkwave</code> views.
+      </p>
+    </details>
+
+    <p><strong>Q2.</strong> After compiling to <code>sim</code>, which command runs the simulation?</p>
+    <ul>
+      <li>A) <code>iverilog sim</code></li>
+      <li>B) <code>run sim</code></li>
+      <li>C) <code>vvp sim</code></li>
+      <li>D) <code>gtkwave sim</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — <code>vvp</code> is the Icarus runtime engine.</p>
+    </details>
+
+    <p><strong>Q3.</strong> The name of the <code>.vcd</code> file generated is decided by:</p>
+    <ul>
+      <li>A) the <code>-o</code> flag</li>
+      <li>B) the argument of <code>$dumpfile</code></li>
+      <li>C) the module name</li>
+      <li>D) the name of the testbench file</li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>$dumpfile("x.vcd")</code> sets it.</p>
+    </details>
+
+    <p><strong>Q4.</strong> In a testbench, the DUT's input ports are driven by signals declared as:</p>
+    <ul>
+      <li>A) <code>wire</code></li>
+      <li>B) <code>reg</code></li>
+      <li>C) <code>input</code></li>
+      <li>D) <code>assign</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — the testbench assigns values procedurally inside <code>initial</code>, so they must be
+        <code>reg</code>. Outputs observed are <code>wire</code>.
+      </p>
+    </details>
+
+    <p><strong>Q5.</strong> Which block executes exactly once, starting at time 0?</p>
+    <ul>
+      <li>A) <code>always</code></li>
+      <li>B) <code>initial</code></li>
+      <li>C) <code>assign</code></li>
+      <li>D) <code>function</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q6.</strong> <code>always #5 clk = ~clk;</code> (with <code>clk</code> initially 0) produces a clock of
+      period:</p>
+    <ul>
+      <li>A) 5</li>
+      <li>B) 10</li>
+      <li>C) 2.5</li>
+      <li>D) 20</li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — toggles every 5 → full period 10.</p>
+    </details>
+
+    <p><strong>Q7.</strong> Which task prints a message every time one of its arguments changes?</p>
+    <ul>
+      <li>A) <code>$display</code></li>
+      <li>B) <code>$write</code></li>
+      <li>C) <code>$monitor</code></li>
+      <li>D) <code>$finish</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q8.</strong> What happens if a testbench with a free-running clock has no <code>$finish</code>?</p>
+    <ul>
+      <li>A) Compilation fails</li>
+      <li>B) Simulation ends at time 0</li>
+      <li>C) Simulation runs indefinitely</li>
+      <li>D) The VCD is not created</li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — events keep being generated by the clock.</p>
+    </details>
+
+    <p><strong>Q9.</strong> The initial value of an uninitialised <code>reg</code> in simulation is:</p>
+    <ul>
+      <li>A) 0</li>
+      <li>B) 1</li>
+      <li>C) <code>x</code></li>
+      <li>D) <code>z</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — unknown. (An undriven <code>wire</code> is <code>z</code>.)</p>
+    </details>
+
+    <p><strong>Q10.</strong> <code>$dumpvars(0, tb);</code> means:</p>
+    <ul>
+      <li>A) dump only <code>tb</code> top-level signals</li>
+      <li>B) dump all signals in <code>tb</code> and every level below it</li>
+      <li>C) dump nothing</li>
+      <li>D) dump at time 0 only</li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — level 0 = all levels of hierarchy.</p>
+    </details>
+
+    <p><strong>Q11.</strong> Which is the correct named-port instantiation?</p>
+    <ul>
+      <li>A) <code>and2 u1 (a, b, y);</code> (always)</li>
+      <li>B) <code>and2 u1 (.a(x), .b(z), .y(w));</code></li>
+      <li>C) <code>and2 u1 {.a(x), .b(z)};</code></li>
+      <li>D) <code>and2 (u1) .a(x);</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>.port(signal)</code> syntax; order doesn't matter with named ports.</p>
+    </details>
+
+    <p><strong>Q12.</strong> Which assignment style should be used inside <code>always @(posedge clk)</code> for
+      flip-flops?</p>
+    <ul>
+      <li>A) blocking <code>=</code></li>
+      <li>B) non-blocking <code>&lt;=</code></li>
+      <li>C) <code>assign</code></li>
+      <li>D) <code>force</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q13.</strong> For <code>a = 4'b1010</code>, <code>&amp;a</code> equals:</p>
+    <ul>
+      <li>A) 1</li>
+      <li>B) 0</li>
+      <li>C) x</li>
+      <li>D) 1010</li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — reduction AND: all bits must be 1.</p>
+    </details>
+
+    <p><strong>Q14.</strong> <code>{2{2'b10}}</code> evaluates to:</p>
+    <ul>
+      <li>A) <code>10</code></li>
+      <li>B) <code>1010</code></li>
+      <li>C) <code>0101</code></li>
+      <li>D) <code>1001</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — replication.</p>
+    </details>
+
+    <p><strong>Q15.</strong> <code>8'hA5</code> in binary is:</p>
+    <ul>
+      <li>A) <code>10100101</code></li>
+      <li>B) <code>01011010</code></li>
+      <li>C) <code>10101010</code></li>
+      <li>D) <code>00001010</code></li>
+    </ul>
+    <details open="">
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — A=1010, 5=0101.</p>
+    </details>
+
+    <hr>
+    <h1 id="lab-2--logic-gates-and-gate-level-structural-circuits">LAB 2 — Logic Gates and Gate-Level Structural
+      Circuits</h1>
+    <h2 id="concepts">Concepts</h2>
+    <ul>
+      <li><strong>Structural (gate-level) modelling</strong> = describe a circuit by <em>instantiating
+          gates/modules</em> and wiring them with <code>wire</code>s.</li>
+      <li>Built-in primitives: <code>and, or, not, nand, nor, xor, xnor</code> (also <code>buf</code>). <strong>Output
+          is the first terminal.</strong> Instance name is optional.</li>
+      <li>Multi-input allowed: <code>and g(y, a, b, c);</code> → y = a·b·c. <code>not</code>/<code>buf</code> have one
+        input (<code>not n(y, a);</code>).</li>
+      <li>Intermediate connections between gates are <code>wire</code>s.</li>
+      <li>Verify using an <strong>exhaustive testbench</strong>: n inputs → 2ⁿ vectors.</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Gate</th>
+          <th>Expr</th>
+          <th>Verilog primitive</th>
+          <th>Truth (A,B = 00,01,10,11)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AND</td>
+          <td>A·B</td>
+          <td><code>and g(y,a,b)</code></td>
+          <td>0 0 0 1</td>
+        </tr>
+        <tr>
+          <td>OR</td>
+          <td>A+B</td>
+          <td><code>or g(y,a,b)</code></td>
+          <td>0 1 1 1</td>
+        </tr>
+        <tr>
+          <td>NOT</td>
+          <td>A̅</td>
+          <td><code>not g(y,a)</code></td>
+          <td>1 0 (for A=0,1)</td>
+        </tr>
+        <tr>
+          <td>NAND</td>
+          <td>(A·B)̅</td>
+          <td><code>nand g(y,a,b)</code></td>
+          <td>1 1 1 0</td>
+        </tr>
+        <tr>
+          <td>NOR</td>
+          <td>(A+B)̅</td>
+          <td><code>nor g(y,a,b)</code></td>
+          <td>1 0 0 0</td>
+        </tr>
+        <tr>
+          <td>XOR</td>
+          <td>A⊕B</td>
+          <td><code>xor g(y,a,b)</code></td>
+          <td>0 1 1 0</td>
+        </tr>
+        <tr>
+          <td>XNOR</td>
+          <td>(A⊕B)̅</td>
+          <td><code>xnor g(y,a,b)</code></td>
+          <td>1 0 0 1</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="code">Code</h2>
+    <pre><code class="hljs plaintext">// Simple Circuit-1:  E = ~C,  D = (A·B) + ~C
+module circuit1 (input A, B, C, output D, E);
+  wire w1;
+  and g1 (w1, A, B);   // w1 = A·B
+  not g2 (E, C);       // E  = ~C
+  or  g3 (D, w1, E);   // D  = w1 + E
+endmodule
+
+// Simple Circuit-2:  Y = A + (B·C)
+module circuit2 (input A, B, C, output Y);
+  wire w1;
+  and g1 (w1, C, B);
+  or  g2 (Y, A, w1);
+endmodule
+
+// Simple Circuit-3:  Z = (A2 + C2·B2) + (B2·A2)
+module circuit3 (input A2, B2, C2, output Z);
+  wire w1, w2, w3;
+  and g1 (w1, C2, B2);
+  or  g2 (w2, A2, w1);
+  and g3 (w3, B2, A2);
+  or  g4 (Z,  w2, w3);
+endmodule</code></pre>
+    <p>Circuit-1 truth table (A B C → E D): 000→1 1 · 001→0 0 · 010→1 1 · 011→0 0 · 100→1 1 · 101→0 0 · 110→1 1 · 111→0
+      1</p>
+    <pre><code class="hljs plaintext">// Exhaustive testbench using a 3-bit counter vector
+module tb;
+  reg A, B, C; wire D, E;  integer i;
+  circuit1 dut(A,B,C,D,E);
+  initial begin
+    $monitor("%b%b%b -&gt; E=%b D=%b", A,B,C,E,D);
+    for (i=0; i&lt;8; i=i+1) begin {A,B,C} = i[2:0]; #10; end
+    $finish;
+  end
+endmodule</code></pre>
+    <h2 id="mcqs--lab-2">MCQs — Lab 2</h2>
+    <p><strong>Q1.</strong> In <code>nand g1(y, a, b);</code> which terminal is the output?</p>
+    <ul>
+      <li>A) <code>a</code> B) <code>b</code> C) <code>y</code> D) all of them</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — the first terminal of a gate primitive is the output.</p>
+    </details>
+
+    <p><strong>Q2.</strong> Which is <strong>not</strong> a built-in Verilog gate primitive?</p>
+    <ul>
+      <li>A) <code>xnor</code> B) <code>nor</code> C) <code>mux</code> D) <code>buf</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — there is no <code>mux</code> primitive.</p>
+    </details>
+
+    <p><strong>Q3.</strong> <code>xor g(y, 1'b1, 1'b1);</code> gives <code>y =</code></p>
+    <ul>
+      <li>A) 1 B) 0 C) x D) z</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — XOR is 1 only when the inputs differ.</p>
+    </details>
+
+    <p><strong>Q4.</strong> <code>nor g(y, 1'b0, 1'b0);</code> gives <code>y =</code></p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) z</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — NOR = NOT(0+0) = 1.</p>
+    </details>
+
+    <p><strong>Q5.</strong> Which modelling style is used when you instantiate <code>and</code>, <code>or</code>,
+      <code>not</code> and connect them with wires?
+    </p>
+    <ul>
+      <li>A) Behavioural B) Data-flow C) Structural (gate-level) D) Switch-level only</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q6.</strong> Number of input combinations needed for an exhaustive test of a 3-input circuit:</p>
+    <ul>
+      <li>A) 3 B) 6 C) 8 D) 9</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — 2³ = 8.</p>
+    </details>
+
+    <p><strong>Q7.</strong> In Circuit-1, the output <code>D</code> equals:</p>
+    <ul>
+      <li>A) A·B·C̅ B) (A·B) + C̅ C) A + B + C̅ D) (A+B)·C̅</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — D = w1 + E where w1 = A·B and E = C̅.</p>
+    </details>
+
+    <p><strong>Q8.</strong> Circuit-1 with A=1, B=1, C=1 gives (E, D):</p>
+    <ul>
+      <li>A) (0,0) B) (1,1) C) (0,1) D) (1,0)</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — E = C̅ = 0, w1 = 1 → D = 1.</p>
+    </details>
+
+    <p><strong>Q9.</strong> Circuit-1 with A=0, B=1, C=1 gives D =</p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) 1 only if A=1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — w1 = 0, C̅ = 0 → D = 0.</p>
+    </details>
+
+    <p><strong>Q10.</strong> Circuit-1: for how many of the 8 input combinations is D = 1?</p>
+    <ul>
+      <li>A) 3 B) 4 C) 5 D) 6</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — 000, 010, 100, 110, 111 → 5.</p>
+    </details>
+
+    <p><strong>Q11.</strong> The Boolean function of Simple Circuit-2 (AND of B,C feeding an OR with A) is:</p>
+    <ul>
+      <li>A) A·(B + C) B) A + B·C C) (A + B)·C D) A·B·C</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q12.</strong> Circuit-2 with A=0, B=1, C=1 gives Y =</p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) z</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — B·C = 1, so Y = 0 + 1 = 1.</p>
+    </details>
+
+    <p><strong>Q13.</strong> Total gates used in Simple Circuit-3 (two ANDs and two ORs):</p>
+    <ul>
+      <li>A) 3 B) 4 C) 5 D) 6</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q14.</strong> Simple Circuit-3 computes Z = A2 + C2·B2 + B2·A2. Simplified, Z =</p>
+    <ul>
+      <li>A) A2 + B2·C2 B) A2·B2 C) B2 + C2 D) A2·B2·C2</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — absorption: A2 + A2·B2 = A2.</p>
+    </details>
+
+    <p><strong>Q15.</strong> Intermediate signals between gates in a structural module are declared as:</p>
+    <ul>
+      <li>A) <code>reg</code> B) <code>wire</code> C) <code>integer</code> D) <code>parameter</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q16.</strong> To apply all 8 combinations of A, B, C in a testbench loop you might write:</p>
+    <ul>
+      <li>A) <code>{A,B,C} = i;</code> B) <code>A=B=C=i;</code> C) <code>assign {A,B,C}=i;</code> D)
+        <code>A,B,C &lt;= i</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — concatenation on the LHS splits the loop index across the bits.</p>
+    </details>
+
+    <p><strong>Q17.</strong> A single <code>and</code> primitive instantiated as <code>and g(y, a, b, c);</code>
+      implements:</p>
+    <ul>
+      <li>A) y = a·b only B) y = a·b·c C) y = a + b + c D) error</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — gate primitives accept any number of inputs (one output).</p>
+    </details>
+
+    <p><strong>Q18.</strong> Which statement is legal for a NOT gate?</p>
+    <ul>
+      <li>A) <code>not n1(y, a, b);</code> to invert two inputs into one output</li>
+      <li>B) <code>not n1(y, a);</code></li>
+      <li>C) <code>not n1(a);</code></li>
+      <li>D) <code>not n1(y = ~a);</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — output first, then the single input. (<code>not n1(y, a, b)</code> would make
+        <code>y</code> and <code>a</code> outputs.)
+      </p>
+    </details>
+
+    <p><strong>Q19.</strong> What does <code>#10;</code> inside an <code>initial</code> block do?</p>
+    <ul>
+      <li>A) Ends simulation at 10</li>
+      <li>B) Delays execution of the next statement by 10 time units</li>
+      <li>C) Repeats the previous line 10 times</li>
+      <li>D) Sets the clock period to 10</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q20.</strong> What does an XNOR gate output for inputs 1 and 0?</p>
+    <ul>
+      <li>A) 1 B) 0 C) x D) depends on delay</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — XNOR = 1 only when inputs are equal.</p>
+    </details>
+
+    <hr>
+    <h1 id="lab-3--mux-decoder-priority-encoder-structural">LAB 3 — MUX, Decoder, Priority Encoder (Structural)</h1>
+    <h2 id="concepts-1">Concepts</h2>
+    <ul>
+      <li><strong>MUX</strong>: n select lines choose 1 of 2ⁿ data inputs. 4:1 → 2 selects; 8:1 → 3 selects.</li>
+      <li><strong>Decoder</strong>: n inputs → 2ⁿ one-hot outputs (exactly one output 1).</li>
+      <li><strong>Priority encoder</strong> (8-to-3): highest-numbered active input wins; <code>VALID = 1</code> if any
+        input is 1.</li>
+      <li>Structural implementation = NOT + AND + OR primitives (SOP form).</li>
+    </ul>
+    <p><strong>4:1 MUX SOP:</strong> <code>Y = D0·S1'·S0' + D1·S1'·S0 + D2·S1·S0' + D3·S1·S0</code></p>
+    <table>
+      <thead>
+        <tr>
+          <th>S1 S0</th>
+          <th>Y</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>00</td>
+          <td>D0</td>
+        </tr>
+        <tr>
+          <td>01</td>
+          <td>D1</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>D2</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>D3</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Priority encoder (compact table):</strong></p>
+    <table>
+      <thead>
+        <tr>
+          <th>A7..A0</th>
+          <th>Y2Y1Y0</th>
+          <th>VALID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>00000000</td>
+          <td>000</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>00000001</td>
+          <td>000</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0000001X</td>
+          <td>001</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>000001XX</td>
+          <td>010</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>00001XXX</td>
+          <td>011</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0001XXXX</td>
+          <td>100</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>001XXXXX</td>
+          <td>101</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>01XXXXXX</td>
+          <td>110</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1XXXXXXX</td>
+          <td>111</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><code>Y2 = A7+A6+A5+A4</code> · <code>Y1 = A7+A6+(A5'A4'A3)+(A5'A4'A2)</code> ·
+      <code>Y0 = A7+(A6'A5)+(A6'A4'A3)+(A6'A4'A2'A1)</code> · <code>VALID = A7+A6+…+A0</code><br>9 rows instead of 256
+      because lower-priority bits are <strong>don't care (X)</strong>.
+    </p>
+    <h2 id="code-1">Code</h2>
+    <pre><code class="hljs plaintext">// 4:1 MUX — gate-level
+module mux4to1 (input D0, D1, D2, D3, S1, S0, output Y);
+  wire ns1, ns0, t0, t1, t2, t3;
+  not n1 (ns1, S1);
+  not n2 (ns0, S0);
+  and a0 (t0, D0, ns1, ns0);
+  and a1 (t1, D1, ns1, S0);
+  and a2 (t2, D2, S1,  ns0);
+  and a3 (t3, D3, S1,  S0);
+  or  o1 (Y, t0, t1, t2, t3);
+endmodule
+
+// 2:4 decoder — NOT + AND
+module dec2to4 (input A1, A0, output Y3, Y2, Y1, Y0);
+  wire n1, n0;
+  not g1 (n1, A1);  not g2 (n0, A0);
+  and g3 (Y0, n1, n0);
+  and g4 (Y1, n1, A0);
+  and g5 (Y2, A1, n0);
+  and g6 (Y3, A1, A0);
+endmodule
+
+// 3:8 decoder from two 2:4-style stages (or 8 three-input ANDs)
+module dec3to8 (input A2, A1, A0, output [7:0] Y);
+  wire n2, n1, n0;
+  not (n2,A2); not (n1,A1); not (n0,A0);
+  and (Y[0], n2, n1, n0);  and (Y[1], n2, n1, A0);
+  and (Y[2], n2, A1, n0);  and (Y[3], n2, A1, A0);
+  and (Y[4], A2, n1, n0);  and (Y[5], A2, n1, A0);
+  and (Y[6], A2, A1, n0);  and (Y[7], A2, A1, A0);
+endmodule
+
+// 8:1 MUX built from two 4:1 + one 2:1 (hierarchical)
+module mux8to1 (input [7:0] D, input S2, S1, S0, output Y);
+  wire ya, yb, ns2, t0, t1;
+  mux4to1 m0 (D[0],D[1],D[2],D[3],S1,S0,ya);
+  mux4to1 m1 (D[4],D[5],D[6],D[7],S1,S0,yb);
+  not (ns2,S2);  and (t0,ya,ns2);  and (t1,yb,S2);  or (Y,t0,t1);
+endmodule
+
+// 8-to-3 priority encoder (behavioural, casez for don't cares)
+module prio8to3 (input [7:0] A, output reg [2:0] Y, output reg VALID);
+  always @(*) begin
+    VALID = |A;
+    casez (A)
+      8'b1???????: Y = 3'd7;
+      8'b01??????: Y = 3'd6;
+      8'b001?????: Y = 3'd5;
+      8'b0001????: Y = 3'd4;
+      8'b00001???: Y = 3'd3;
+      8'b000001??: Y = 3'd2;
+      8'b0000001?: Y = 3'd1;
+      default    : Y = 3'd0;   // 00000001 and 00000000 (VALID distinguishes)
+    endcase
+  end
+endmodule</code></pre>
+    <h2 id="mcqs--lab-3">MCQs — Lab 3</h2>
+    <p><strong>Q1.</strong> Number of select lines in a 4:1 MUX:</p>
+    <ul>
+      <li>A) 1 B) 2 C) 3 D) 4</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q2.</strong> In the 4:1 MUX, S1S0 = 10 selects:</p>
+    <ul>
+      <li>A) D0 B) D1 C) D2 D) D3</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — binary 10 = 2.</p>
+    </details>
+
+    <p><strong>Q3.</strong> Which product term in the SOP expression corresponds to D3?</p>
+    <ul>
+      <li>A) D3·S1'·S0 B) D3·S1·S0' C) D3·S1·S0 D) D3·S1'·S0'</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q4.</strong> Minimum primitive gates for the gate-level 4:1 MUX (SOP, 3-input ANDs, 4-input OR):</p>
+    <ul>
+      <li>A) 5 B) 6 C) 7 D) 8</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — 2 NOT + 4 AND + 1 OR = 7.</p>
+    </details>
+
+    <p><strong>Q5.</strong> Select lines needed for an 8:1 MUX:</p>
+    <ul>
+      <li>A) 2 B) 3 C) 4 D) 8</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — log₂8 = 3.</p>
+    </details>
+
+    <p><strong>Q6.</strong> In an 8:1 MUX, S2S1S0 = 101 gives Y =</p>
+    <ul>
+      <li>A) D3 B) D4 C) D5 D) D6</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — 101₂ = 5.</p>
+    </details>
+
+    <p><strong>Q7.</strong> An 8:1 MUX can be built from:</p>
+    <ul>
+      <li>A) 2 × 4:1 and 1 × 2:1 B) 4 × 4:1 C) 1 × 4:1 only D) 3 × 4:1 and 1 × 2:1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — two 4:1 handle S1S0, the 2:1 handles S2.</p>
+    </details>
+
+    <p><strong>Q8.</strong> For a 2-to-4 decoder, the expression for Y1 is:</p>
+    <ul>
+      <li>A) A1·A0 B) A1'·A0 C) A1·A0' D) A1'·A0'</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — Y1 active for A1A0 = 01.</p>
+    </details>
+
+    <p><strong>Q9.</strong> 2-to-4 decoder, A1A0 = 10 → Y3Y2Y1Y0 =</p>
+    <ul>
+      <li>A) 0001 B) 0010 C) 0100 D) 1000</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — Y2 = 1.</p>
+    </details>
+
+    <p><strong>Q10.</strong> Gates needed for the 2-to-4 decoder (NOT + AND version):</p>
+    <ul>
+      <li>A) 2 NOT + 4 AND B) 4 NOT + 2 AND C) 1 NOT + 4 AND D) 2 NOT + 2 AND</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q11.</strong> 3-to-8 decoder: for A2A1A0 = 110, which output is high?</p>
+    <ul>
+      <li>A) Y3 B) Y5 C) Y6 D) Y7</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q12.</strong> Boolean expression for Y5 in a 3-to-8 decoder:</p>
+    <ul>
+      <li>A) A2'·A1·A0 B) A2·A1'·A0 C) A2·A1·A0' D) A2'·A1'·A0</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — 101.</p>
+    </details>
+
+    <p><strong>Q13.</strong> How many outputs of a decoder are 1 at any time (enable always on)?</p>
+    <ul>
+      <li>A) 0 B) exactly 1 C) 2 D) all</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — one-hot.</p>
+    </details>
+
+    <p><strong>Q14.</strong> Priority encoder input <code>00100000</code> produces Y2Y1Y0 =</p>
+    <ul>
+      <li>A) 001 B) 011 C) 101 D) 111</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — A5 is highest → 5 = 101.</p>
+    </details>
+
+    <p><strong>Q15.</strong> Priority encoder input <code>10010000</code> produces:</p>
+    <ul>
+      <li>A) 100 B) 111 C) 011 D) 101</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — A7 has the highest priority.</p>
+    </details>
+
+    <p><strong>Q16.</strong> Priority encoder input <code>01010000</code> produces:</p>
+    <ul>
+      <li>A) 100 B) 101 C) 110 D) 111</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — A6 beats A4.</p>
+    </details>
+
+    <p><strong>Q17.</strong> For <code>00000000</code> the outputs (Y2Y1Y0, VALID) are:</p>
+    <ul>
+      <li>A) 000, 1 B) 000, 0 C) 111, 0 D) xxx, 0</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — VALID = 0 means no input active.</p>
+    </details>
+
+    <p><strong>Q18.</strong> For <code>00000001</code>, outputs are (Y2Y1Y0, VALID):</p>
+    <ul>
+      <li>A) 000, 1 B) 000, 0 C) 001, 1 D) 111, 1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — Y alone cannot distinguish this from no-input; VALID does.</p>
+    </details>
+
+    <p><strong>Q19.</strong> Y2 of the 8-to-3 priority encoder equals:</p>
+    <ul>
+      <li>A) A7+A6+A5+A4 B) A3+A2+A1+A0 C) A7·A6·A5·A4 D) A7+A3</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — Y2 = 1 for indices 4–7.</p>
+    </details>
+
+    <p><strong>Q20.</strong> Number of rows in the compact priority-encoder truth table (incl. all-zero row) and why:
+    </p>
+    <ul>
+      <li>A) 256, all combinations needed</li>
+      <li>B) 9, lower-priority bits are don't-care</li>
+      <li>C) 8, no all-zero row needed</li>
+      <li>D) 16, one per nibble</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — one row per highest asserted input (8) + the all-zero row.</p>
+    </details>
+
+    <p><strong>Q21 (bonus).</strong> Which Verilog statement allows <code>?</code>/<code>z</code> don't-care bits in the
+      case items?</p>
+    <ul>
+      <li>A) <code>case</code> B) <code>casez</code> C) <code>if</code> D) <code>assign</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>casez</code> treats <code>z</code>/<code>?</code> as wildcards.</p>
+    </details>
+
+    <hr>
+    <h1 id="lab-4--data-flow-modelling">LAB 4 — Data-Flow Modelling</h1>
+    <h2 id="concepts-2">Concepts</h2>
+    <ul>
+      <li><strong>Data-flow modelling</strong> = Boolean/arithmetic expressions with <strong>continuous
+          assignment</strong> <code>assign</code>.</li>
+      <li>LHS of <code>assign</code> must be a <strong>net (<code>wire</code>)</strong>; RHS re-evaluated whenever any
+        operand changes. All <code>assign</code>s are concurrent — order irrelevant.</li>
+      <li>Operators: <code>~ &amp; | ^ ~^</code>, <code>?:</code>, <code>{}</code>, <code>&lt;&lt; &gt;&gt;</code>,
+        <code>==</code>.
+      </li>
+      <li><strong>Vectors:</strong> <code>wire [3:0] y;</code> — one-hot decoder via <code>4'b0001 &lt;&lt; A</code>.
+      </li>
+      <li>Compose bigger blocks from smaller ones (4:1 from three 2:1 muxes).</li>
+    </ul>
+    <h2 id="code-2">Code</h2>
+    <pre><code class="hljs plaintext">// 4:1 MUX — SOP in dataflow
+module mux4_sop (input D0,D1,D2,D3,S1,S0, output Y);
+  assign Y = (D0 &amp; ~S1 &amp; ~S0) | (D1 &amp; ~S1 &amp; S0) |
+             (D2 &amp;  S1 &amp; ~S0) | (D3 &amp;  S1 &amp; S0);
+endmodule
+
+// 4:1 MUX — conditional operator
+module mux4_cond (input D0,D1,D2,D3,S1,S0, output Y);
+  assign Y = S1 ? (S0 ? D3 : D2) : (S0 ? D1 : D0);
+endmodule
+
+// 2:1 MUX
+module mux2 (input a, b, s, output y);
+  assign y = s ? b : a;          // s=0 -&gt; a, s=1 -&gt; b
+endmodule
+
+// 4:1 MUX using 2:1 MUXes
+module mux4_from_mux2 (input D0,D1,D2,D3,S1,S0, output Y);
+  wire m0, m1;
+  mux2 u0 (D0, D1, S0, m0);      // first stage uses S0
+  mux2 u1 (D2, D3, S0, m1);
+  mux2 u2 (m0, m1, S1, Y);       // second stage uses S1
+endmodule
+
+// 2:4 decoder — vector, dataflow
+module dec2to4_df (input [1:0] A, output [3:0] Y);
+  assign Y = 4'b0001 &lt;&lt; A;       // A=00-&gt;0001, 01-&gt;0010, 10-&gt;0100, 11-&gt;1000
+endmodule
+// equivalent bit-wise:
+//   assign Y[0] = ~A[1] &amp; ~A[0];  assign Y[1] = ~A[1] &amp; A[0];
+//   assign Y[2] =  A[1] &amp; ~A[0];  assign Y[3] =  A[1] &amp; A[0];</code></pre>
+    <h2 id="mcqs--lab-4">MCQs — Lab 4</h2>
+    <p><strong>Q1.</strong> Which keyword creates a continuous assignment?</p>
+    <ul>
+      <li>A) <code>always</code> B) <code>initial</code> C) <code>assign</code> D) <code>force</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q2.</strong> The left-hand side of an <code>assign</code> statement must be a:</p>
+    <ul>
+      <li>A) <code>reg</code> B) <code>wire</code> (net) C) <code>integer</code> D) <code>real</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q3.</strong> <code>assign y = s ? b : a;</code> describes a:</p>
+    <ul>
+      <li>A) 2:1 MUX B) decoder C) D flip-flop D) adder</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — s=1 → b, s=0 → a.</p>
+    </details>
+
+    <p><strong>Q4.</strong> Bitwise operators for AND, OR, XOR, NOT respectively:</p>
+    <ul>
+      <li>A) <code>&amp;&amp; || ^ !</code> B) <code>&amp; | ^ ~</code> C) <code>&amp;&amp; | ^ ~</code> D)
+        <code>&amp; || ^ !</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q5.</strong> For <code>a = 4'b1010</code>: <code>~a</code> and <code>!a</code> are:</p>
+    <ul>
+      <li>A) <code>0101</code> and <code>0</code> B) <code>0101</code> and <code>1</code> C) <code>0</code> and
+        <code>0101</code> D) <code>1010</code> and <code>0</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — <code>~</code> is bitwise; <code>!</code> is logical (a is non-zero → 0).</p>
+    </details>
+
+    <p><strong>Q6.</strong> <code>assign Y = S1 ? (S0 ? D3 : D2) : (S0 ? D1 : D0);</code> with S1=1, S0=0 gives:</p>
+    <ul>
+      <li>A) D0 B) D1 C) D2 D) D3</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q7.</strong> A 4:1 MUX using 2:1 MUXes needs how many 2:1 MUXes?</p>
+    <ul>
+      <li>A) 2 B) 3 C) 4 D) 5</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — two in the first stage + one in the second.</p>
+    </details>
+
+    <p><strong>Q8.</strong> In a 4:1 MUX built from 2:1 MUXes (inputs D0..D3), the first-stage muxes are controlled by:
+    </p>
+    <ul>
+      <li>A) S1 B) S0 C) S1 and S0 together D) a clock</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — first stage picks between (D0,D1) and (D2,D3) using the LSB S0; second stage uses S1.</p>
+    </details>
+
+    <p><strong>Q9.</strong> <code>4'b0001 &lt;&lt; 2'b10</code> equals:</p>
+    <ul>
+      <li>A) <code>0010</code> B) <code>0100</code> C) <code>1000</code> D) <code>0001</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — shift left by 2.</p>
+    </details>
+
+    <p><strong>Q10.</strong> The decoder <code>assign Y = 4'b0001 &lt;&lt; A;</code> for A = 2'b11 gives Y:</p>
+    <ul>
+      <li>A) 0001 B) 0100 C) 1000 D) 1111</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q11.</strong> <code>wire [3:0] y;</code> — which bit is the MSB?</p>
+    <ul>
+      <li>A) <code>y[0]</code> B) <code>y[3]</code> C) <code>y[4]</code> D) <code>y[1]</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q12.</strong> <code>{a, b}</code> where a = <code>2'b10</code>, b = <code>2'b01</code> equals:</p>
+    <ul>
+      <li>A) <code>1001</code> B) <code>0110</code> C) <code>1010</code> D) <code>0101</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — a is the upper part.</p>
+    </details>
+
+    <p><strong>Q13.</strong> Statement order of several <code>assign</code> statements in a module:</p>
+    <ul>
+      <li>A) Matters — executed top to bottom</li>
+      <li>B) Does not matter — they are concurrent</li>
+      <li>C) Reverse order</li>
+      <li>D) Only the last one counts</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q14.</strong> Which is correct for Y0 of the 2:4 decoder in dataflow?</p>
+    <ul>
+      <li>A) <code>assign Y0 = A1 &amp; A0;</code></li>
+      <li>B) <code>assign Y0 = ~A1 &amp; ~A0;</code></li>
+      <li>C) <code>assign Y0 = ~(A1 &amp; A0);</code></li>
+      <li>D) <code>assign Y0 = A1 | A0;</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q15.</strong> <code>assign y = a &amp; b;</code> — when does the RHS get re-evaluated?</p>
+    <ul>
+      <li>A) Only at time 0</li>
+      <li>B) On every posedge of the clock</li>
+      <li>C) Whenever <code>a</code> or <code>b</code> changes</li>
+      <li>D) Only when <code>y</code> changes</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q16.</strong> Which statement is illegal if <code>y</code> is declared <code>reg y;</code>?</p>
+    <ul>
+      <li>A) <code>always @(*) y = a &amp; b;</code></li>
+      <li>B) <code>assign y = a &amp; b;</code></li>
+      <li>C) <code>initial y = 0;</code></li>
+      <li>D) <code>always @(a,b) y = a | b;</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>assign</code> drives nets, not <code>reg</code>s (procedural assignment is used for
+        <code>reg</code>).
+      </p>
+    </details>
+
+    <p><strong>Q17.</strong> <code>|4'b0000</code> evaluates to:</p>
+    <ul>
+      <li>A) 1 B) 0 C) x D) 4</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — reduction OR is 1 only if at least one bit is 1.</p>
+    </details>
+
+    <p><strong>Q18.</strong> <code>assign #5 y = a &amp; b;</code> means:</p>
+    <ul>
+      <li>A) <code>y</code> updates 5 time units after an input change</li>
+      <li>B) <code>y</code> is forced to 5</li>
+      <li>C) <code>a &amp; b</code> is repeated 5 times</li>
+      <li>D) syntax error</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — delay on continuous assignment.</p>
+    </details>
+
+    <p><strong>Q19.</strong> Which of these is <strong>not</strong> a data-flow description?</p>
+    <ul>
+      <li>A) <code>assign y = a ^ b;</code></li>
+      <li>B) <code>assign y = s ? d1 : d0;</code></li>
+      <li>C) <code>xor g1 (y, a, b);</code></li>
+      <li>D) <code>assign y = {a, b};</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — that is a gate-level (structural) primitive instantiation.</p>
+    </details>
+
+    <p><strong>Q20.</strong> Dataflow 4:1 MUX SOP expression: with S1=0, S0=1 and D1=1, others 0, <code>Y</code> is:</p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) z</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — term <code>D1·S1'·S0</code> = 1.</p>
+    </details>
+
+    <hr>
+    <h1 id="lab-5--sequential-circuits">LAB 5 — Sequential Circuits</h1>
+    <h2 id="concepts-3">Concepts</h2>
+    <ul>
+      <li><strong>Latch</strong> = level-sensitive. <strong>Flip-flop</strong> = edge-triggered (samples on clock edge
+        only).</li>
+      <li><strong>SR latch (NOR)</strong>: <code>Q = ~(R | Qb)</code>, <code>Qb = ~(S | Q)</code> — cross-coupled →
+        feedback.</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>S</th>
+          <th>R</th>
+          <th>Q (next)</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>Q (hold)</td>
+          <td>memory state</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>reset</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>set</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>Q = Qb = 0</td>
+          <td><strong>invalid / forbidden</strong> (both outputs 0; unpredictable when returning to 00)</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><strong>Positive edge D-FF:</strong> <code>always @(posedge clk) q &lt;= d;</code> — <code>q</code> must be
+        <code>reg</code>; use <strong>non-blocking <code>&lt;=</code></strong>.
+      </li>
+      <li>Q changes only at the rising edge and holds in between; D must be stable around the edge (setup/hold).</li>
+      <li><strong>Enabled D-FF (Fig 3.10a):</strong> 2:1 MUX in front of the D-FF → <code>D_ff = EN ? D : Q</code>. EN=1
+        loads D; EN=0 recirculates Q (hold).</li>
+      <li>Reset: <strong>synchronous</strong> <code>always @(posedge clk)</code> + <code>if(rst)</code>;
+        <strong>asynchronous</strong> <code>always @(posedge clk or posedge rst)</code>.
+      </li>
+      <li>Uninitialised <code>reg</code> = <code>x</code> → apply a reset / initial value in testbench.</li>
+    </ul>
+    <h2 id="code-3">Code</h2>
+    <pre><code class="hljs plaintext">// SR latch from cross-coupled NOR gates
+module sr_latch (input S, R, output Q, Qb);
+  nor n1 (Q,  R, Qb);
+  nor n2 (Qb, S, Q);
+endmodule
+
+// Positive-edge D flip-flop
+module dff (input clk, d, output reg q);
+  always @(posedge clk) q &lt;= d;
+endmodule
+
+// D flip-flop with async active-high reset
+module dff_ar (input clk, rst, d, output reg q);
+  always @(posedge clk or posedge rst)
+    if (rst) q &lt;= 1'b0; else q &lt;= d;
+endmodule
+
+// Enabled D flip-flop: MUX + DFF
+module dff_en (input clk, d, en, output q);
+  wire din;
+  assign din = en ? d : q;       // MUX: EN=1 -&gt; D, EN=0 -&gt; Q (feedback)
+  dff u (.clk(clk), .d(din), .q(q));
+endmodule
+
+// Testbench pattern: D changes before and after the rising edge
+module tb;
+  reg clk=0, d=0; wire q;
+  dff dut(clk,d,q);
+  always #5 clk = ~clk;          // rising edges at 5, 15, 25 ...
+  initial begin
+    $dumpfile("dff.vcd"); $dumpvars(0,tb);
+    #2 d=1;  #5 d=0;  #10 d=1;   // t=2: d=1 ; t=7: d=0 ; t=17: d=1
+    #10 $finish;
+  end
+endmodule</code></pre>
+    <h2 id="mcqs--lab-5">MCQs — Lab 5</h2>
+    <p><strong>Q1.</strong> NOR-based SR latch with S=0, R=0:</p>
+    <ul>
+      <li>A) Q=0 B) Q=1 C) holds previous state D) invalid</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q2.</strong> NOR SR latch with S=1, R=0 gives:</p>
+    <ul>
+      <li>A) Q=0, Qb=1 B) Q=1, Qb=0 C) Q=Qb=0 D) Q=Qb=1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — set.</p>
+    </details>
+
+    <p><strong>Q3.</strong> NOR SR latch with S=0, R=1 gives Q =</p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) previous</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — reset.</p>
+    </details>
+
+    <p><strong>Q4.</strong> NOR SR latch with S=1, R=1 gives:</p>
+    <ul>
+      <li>A) Q=1, Qb=0 B) Q=0, Qb=1 C) Q=Qb=0 (forbidden) D) Q=Qb=1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — both NORs see a 1 → both outputs 0; invalid since Q ≠ ~Qb.</p>
+    </details>
+
+    <p><strong>Q5.</strong> The characteristic equation implemented by the top NOR gate is:</p>
+    <ul>
+      <li>A) <code>Q = ~(S | Qb)</code> B) <code>Q = ~(R | Qb)</code> C) <code>Q = R &amp; Qb</code> D)
+        <code>Q = ~(R &amp; Qb)</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — as coded: <code>nor n1(Q, R, Qb)</code>.</p>
+    </details>
+
+    <p><strong>Q6.</strong> In simulation, before any S/R input resolves the feedback, the SR latch outputs are:</p>
+    <ul>
+      <li>A) 0 B) 1 C) <code>x</code> D) <code>z</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — the feedback loop starts unknown; apply S or R first.</p>
+    </details>
+
+    <p><strong>Q7.</strong> The key difference between a latch and a flip-flop:</p>
+    <ul>
+      <li>A) Latch is edge-triggered, FF is level-sensitive</li>
+      <li>B) Latch is level-sensitive, FF is edge-triggered</li>
+      <li>C) Both are combinational</li>
+      <li>D) No difference</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q8.</strong> Correct description of a positive-edge D-FF:</p>
+    <ul>
+      <li>A) <code>always @(negedge clk) q = d;</code></li>
+      <li>B) <code>always @(posedge clk) q &lt;= d;</code></li>
+      <li>C) <code>assign q = clk ? d : q;</code></li>
+      <li>D) <code>always @(d) q &lt;= d;</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q9.</strong> Output <code>q</code> of a procedurally-assigned D-FF must be declared as:</p>
+    <ul>
+      <li>A) <code>wire</code> B) <code>reg</code> C) <code>parameter</code> D) <code>input</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q10.</strong> Preferred assignment operator inside clocked <code>always</code> blocks:</p>
+    <ul>
+      <li>A) <code>=</code> B) <code>&lt;=</code> C) <code>==</code> D) <code>:=</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — non-blocking avoids race conditions between flip-flops.</p>
+    </details>
+
+    <p><strong>Q11.</strong> Clock generated by <code>always #5 clk=~clk;</code> (starts 0). First rising edge occurs at
+      t =</p>
+    <ul>
+      <li>A) 0 B) 5 C) 10 D) 2.5</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q12.</strong> In the sample testbench (<code>d=1</code> at t=2, <code>d=0</code> at t=7, edges at 5,
+      15…), <code>q</code> right after t=5 is:</p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) toggles</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — at the edge (t=5) d=1 is captured; the later change to 0 at t=7 does not matter until
+        t=15.</p>
+    </details>
+
+    <p><strong>Q13.</strong> Following the same testbench, <code>q</code> just after t=15 is:</p>
+    <ul>
+      <li>A) 1 B) 0 C) x D) z</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — at t=15, d=0 (changed at 7; goes back to 1 only at t=17).</p>
+    </details>
+
+    <p><strong>Q14.</strong> Between active clock edges, a D flip-flop output:</p>
+    <ul>
+      <li>A) follows D continuously</li>
+      <li>B) retains its stored value</li>
+      <li>C) goes to 0</li>
+      <li>D) goes to x</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q15.</strong> The multiplexer in the enabled D-FF selects <code>D</code> when:</p>
+    <ul>
+      <li>A) EN = 0 B) EN = 1 C) CLK = 1 D) Q = 1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q16.</strong> Enabled D-FF with EN = 0 at a clock edge:</p>
+    <ul>
+      <li>A) Q ← D B) Q ← ~D C) Q ← Q (hold) D) Q ← 0</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — the MUX feeds back Q.</p>
+    </details>
+
+    <p><strong>Q17.</strong> The data input actually seen by the flip-flop in the enabled D-FF is:</p>
+    <ul>
+      <li>A) <code>D &amp; EN</code> B) <code>EN ? D : Q</code> C) <code>EN | D</code> D) <code>D ^ Q</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q18.</strong> Sensitivity list for a flip-flop with asynchronous active-high reset:</p>
+    <ul>
+      <li>A) <code>@(posedge clk)</code> B) <code>@(posedge clk or posedge rst)</code> C) <code>@(clk or rst)</code> D)
+        <code>@(*)</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q19.</strong> The uninitialised <code>q</code> of a D-FF at time 0 before the first clock edge is:</p>
+    <ul>
+      <li>A) 0 B) 1 C) <code>x</code> D) <code>z</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — you see <code>x</code> in the waveform until the first edge loads D.</p>
+    </details>
+
+    <p><strong>Q20.</strong> Setup time is the time that:</p>
+    <ul>
+      <li>A) D must be stable before the active clock edge</li>
+      <li>B) D must be stable after the clock edge</li>
+      <li>C) Q takes to change after the edge</li>
+      <li>D) the clock stays high</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — hold time is after the edge; clock-to-Q is the propagation delay.</p>
+    </details>
+
+    <hr>
+    <h1 id="lab-6--full-adder-and-8-bit-ripple-carry-adder">LAB 6 — Full Adder and 8-bit Ripple-Carry Adder</h1>
+    <h2 id="concepts-4">Concepts</h2>
+    <ul>
+      <li><strong>Half adder (HA):</strong> <code>S = A ⊕ B</code>, <code>C = A·B</code>.</li>
+      <li><strong>Full adder (FA):</strong> <code>S = A ⊕ B ⊕ Cin</code>, <code>Cout = A·B + Cin·(A ⊕ B)</code>.</li>
+      <li><strong>FA from 2 HA + OR:</strong> HA1(A,B) → s1,c1; HA2(s1,Cin) → S,c2; <code>Cout = c1 | c2</code>. Total
+        gates: 2 XOR + 2 AND + 1 OR = <strong>5</strong>.</li>
+      <li><strong>RCA:</strong> chain FAs; carry-out of stage <em>i</em> → carry-in of stage <em>i+1</em>. Carry has to
+        ripple → <strong>delay ∝ N</strong> (critical path through all stages). Slower than carry-lookahead.</li>
+      <li>Constraints in this lab: <strong>no <code>+</code></strong>, <strong>no <code>generate/genvar</code></strong>
+        → instantiate 8 FAs manually.</li>
+      <li>Max 8-bit sum = 255+255+1 = 511 → needs 9 bits (8-bit Sum + Cout).</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>A B Cin</th>
+          <th>S Cout</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>000</td>
+          <td>0 0</td>
+        </tr>
+        <tr>
+          <td>001</td>
+          <td>1 0</td>
+        </tr>
+        <tr>
+          <td>010</td>
+          <td>1 0</td>
+        </tr>
+        <tr>
+          <td>011</td>
+          <td>0 1</td>
+        </tr>
+        <tr>
+          <td>100</td>
+          <td>1 0</td>
+        </tr>
+        <tr>
+          <td>101</td>
+          <td>0 1</td>
+        </tr>
+        <tr>
+          <td>110</td>
+          <td>0 1</td>
+        </tr>
+        <tr>
+          <td>111</td>
+          <td>1 1</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="code-4">Code</h2>
+    <pre><code class="hljs plaintext">module half_adder (input a, b, output s, c);
+  xor g1 (s, a, b);
+  and g2 (c, a, b);
+endmodule
+
+module full_adder (input a, b, cin, output sum, cout);
+  wire s1, c1, c2;
+  half_adder ha1 (.a(a),  .b(b),   .s(s1),  .c(c1));
+  half_adder ha2 (.a(s1), .b(cin), .s(sum), .c(c2));
+  or o1 (cout, c1, c2);
+endmodule
+
+module rca8 (input [7:0] A, B, input Cin, output [7:0] Sum, output Cout);
+  wire [8:0] c;                       // c[0]=Cin ... c[8]=Cout
+  assign c[0] = Cin;
+  full_adder fa0 (A[0], B[0], c[0], Sum[0], c[1]);
+  full_adder fa1 (A[1], B[1], c[1], Sum[1], c[2]);
+  full_adder fa2 (A[2], B[2], c[2], Sum[2], c[3]);
+  full_adder fa3 (A[3], B[3], c[3], Sum[3], c[4]);
+  full_adder fa4 (A[4], B[4], c[4], Sum[4], c[5]);
+  full_adder fa5 (A[5], B[5], c[5], Sum[5], c[6]);
+  full_adder fa6 (A[6], B[6], c[6], Sum[6], c[7]);
+  full_adder fa7 (A[7], B[7], c[7], Sum[7], c[8]);
+  assign Cout = c[8];
+endmodule
+
+module tb_rca8;
+  reg [7:0] A, B; reg Cin; wire [7:0] Sum; wire Cout;
+  rca8 dut (A,B,Cin,Sum,Cout);
+  initial begin
+    $monitor("A=%b B=%b Cin=%b -&gt; Sum=%b Cout=%b", A,B,Cin,Sum,Cout);
+    A=8'b00001111; B=8'b00000001; Cin=0; #10;   // 00010000, 0
+    A=8'b11111111; B=8'b00000001; Cin=0; #10;   // 00000000, 1
+    A=8'b10101010; B=8'b01010101; Cin=0; #10;   // 11111111, 0
+    A=8'b11110000; B=8'b00001111; Cin=1; #10;   // 00000000, 1
+    $finish;
+  end
+endmodule</code></pre>
+    <h2 id="mcqs--lab-6">MCQs — Lab 6</h2>
+    <p><strong>Q1.</strong> Half-adder sum output:</p>
+    <ul>
+      <li>A) A·B B) A⊕B C) A+B D) (A⊕B)̅</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q2.</strong> Half-adder carry output:</p>
+    <ul>
+      <li>A) A⊕B B) A+B C) A·B D) A̅·B</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q3.</strong> Full adder sum:</p>
+    <ul>
+      <li>A) A·B·Cin B) A⊕B⊕Cin C) A+B+Cin D) A·B + Cin</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q4.</strong> Full adder carry-out:</p>
+    <ul>
+      <li>A) A·B + Cin·(A⊕B) B) A⊕B⊕Cin C) A + B + Cin D) A·B·Cin</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q5.</strong> A full adder built from two half adders and one OR: the OR combines:</p>
+    <ul>
+      <li>A) the two sum outputs</li>
+      <li>B) the two carry outputs</li>
+      <li>C) sum of HA1 and carry of HA2</li>
+      <li>D) A and B</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>Cout = c1 | c2</code>.</p>
+    </details>
+
+    <p><strong>Q6.</strong> For inputs A=1, B=1, Cin=1 the full adder outputs (Sum, Cout):</p>
+    <ul>
+      <li>A) (0,0) B) (0,1) C) (1,0) D) (1,1)</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>D</strong> — 1+1+1 = 11₂.</p>
+    </details>
+
+    <p><strong>Q7.</strong> Total primitive gates in the "2 HA + OR" full adder:</p>
+    <ul>
+      <li>A) 3 B) 4 C) 5 D) 7</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — 2 XOR + 2 AND + 1 OR.</p>
+    </details>
+
+    <p><strong>Q8.</strong> Number of full adders in an 8-bit RCA:</p>
+    <ul>
+      <li>A) 4 B) 7 C) 8 D) 16</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q9.</strong> In <code>wire [8:0] c;</code> for the RCA, <code>c[8]</code> is:</p>
+    <ul>
+      <li>A) carry-in B) carry out of the MSB stage (Cout) C) Sum[8] D) unused</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>c[0] = Cin</code>.</p>
+    </details>
+
+    <p><strong>Q10.</strong> The critical path of a ripple-carry adder is:</p>
+    <ul>
+      <li>A) Through the XOR of bit 0 only</li>
+      <li>B) The carry chain through all stages</li>
+      <li>C) The sum XOR of MSB only</li>
+      <li>D) Independent of N</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — delay grows linearly with the bit-width.</p>
+    </details>
+
+    <p><strong>Q11.</strong> 8'b11111111 + 8'b00000001 (Cin = 0) gives:</p>
+    <ul>
+      <li>A) Sum=00000000, Cout=0 B) Sum=00000000, Cout=1 C) Sum=11111111, Cout=0 D) Sum=00000001, Cout=1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — 256 = overflow of 8 bits.</p>
+    </details>
+
+    <p><strong>Q12.</strong> 8'b10101010 + 8'b01010101 (Cin = 0):</p>
+    <ul>
+      <li>A) 00000000, Cout 1 B) 11111111, Cout 0 C) 11111110, Cout 0 D) 10101010, Cout 1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — 170+85 = 255.</p>
+    </details>
+
+    <p><strong>Q13.</strong> 8'b11110000 + 8'b00001111 + Cin=1 gives:</p>
+    <ul>
+      <li>A) Sum=11111111, Cout=0 B) Sum=00000000, Cout=1 C) Sum=00000000, Cout=0 D) Sum=00010000, Cout=0</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — 240+15+1 = 256.</p>
+    </details>
+
+    <p><strong>Q14.</strong> 8'b00001111 + 8'b00000001 (Cin=0):</p>
+    <ul>
+      <li>A) 00010000, Cout 0 B) 00001110, Cout 0 C) 00010001, Cout 0 D) 00010000, Cout 1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — 15+1 = 16.</p>
+    </details>
+
+    <p><strong>Q15.</strong> Which constructs are <strong>not allowed</strong> in the 8-bit RCA lab?</p>
+    <ul>
+      <li>A) Module instantiation</li>
+      <li>B) <code>+</code> operator and <code>generate/genvar</code></li>
+      <li>C) <code>wire</code> vectors</li>
+      <li>D) <code>$monitor</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q16.</strong> Which is a valid named-port instantiation of a full adder?</p>
+    <ul>
+      <li>A) <code>full_adder fa0 (.a(A[0]), .b(B[0]), .cin(c[0]), .sum(S[0]), .cout(c[1]));</code></li>
+      <li>B) <code>full_adder fa0 [A[0], B[0], c[0]];</code></li>
+      <li>C) <code>full_adder (fa0) A[0], B[0];</code></li>
+      <li>D) <code>new full_adder fa0;</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q17.</strong> The RCA's carry wires between stages: for 8 stages there are how many <em>internal</em>
+      carries (excluding Cin and Cout)?</p>
+    <ul>
+      <li>A) 6 B) 7 C) 8 D) 9</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — c[1]…c[7].</p>
+    </details>
+
+    <p><strong>Q18.</strong> <code>$display("%b + %b = %d", A, B, S);</code> — <code>%b</code> and <code>%d</code> print
+      respectively in:</p>
+    <ul>
+      <li>A) binary / decimal B) hex / binary C) decimal / hex D) binary / hex</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q19.</strong> Compared to a carry-lookahead adder, an RCA is:</p>
+    <ul>
+      <li>A) Faster but larger B) Slower but simpler/smaller C) Same speed D) Not combinational</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q20.</strong> Bits needed to hold the full result of adding two 8-bit numbers and a carry-in:</p>
+    <ul>
+      <li>A) 8 B) 9 C) 10 D) 16</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — max 511 → 8-bit Sum + 1-bit Cout.</p>
+    </details>
+
+    <hr>
+    <h1 id="lab-7--16-bit-alu">LAB 7 — 16-bit ALU</h1>
+    <h2 id="concepts-5">Concepts</h2>
+    <ul>
+      <li>Inputs <code>i0[15:0]</code>, <code>i1[15:0]</code>, <code>op[1:0]</code>; outputs <code>o[15:0]</code>,
+        <code>carry</code>, <code>overflow</code>.
+      </li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>op</th>
+          <th>Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>00</td>
+          <td>ADD <code>i0 + i1</code></td>
+        </tr>
+        <tr>
+          <td>01</td>
+          <td>SUB <code>i0 − i1</code></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>AND</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>OR</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>Purely <strong>combinational</strong> (no clock). <code>carry</code>/<code>overflow</code> are don't-care for
+        logic ops.</li>
+      <li><strong>Two's complement:</strong> <code>−B = ~B + 1</code>. So <code>A − B = A + ~B + 1</code>. Reuse the
+        adder: <code>b_eff = i1 ^ {16{op[0]}}</code>, <code>cin = op[0]</code>.</li>
+      <li><strong>Signed 16-bit range:</strong> −32768 … +32767 (<code>0x8000</code> … <code>0x7FFF</code>).</li>
+      <li><strong>Carry</strong> = carry out of MSB (unsigned view). <strong>Overflow</strong> (signed view): operands
+        same sign but result sign differs; equivalently <code>overflow = c15 ⊕ c16</code> (carry into MSB XOR carry out
+        of MSB).</li>
+      <li>For subtraction, carry = 1 means <strong>no borrow</strong>.</li>
+      <li>Files / flow: <code>iverilog -o test Lab7_alu.v Lab7_alu_tb.v</code> → <code>vvp test</code> →
+        <code>gtkwave &lt;name&gt;.vcd</code> (name set by <code>$dumpfile</code>).
+      </li>
+    </ul>
+    <h2 id="code-5">Code</h2>
+    <pre><code class="hljs plaintext">module alu (input [15:0] i0, i1, input [1:0] op,
+            output reg [15:0] o, output reg carry, overflow);
+  wire [15:0] b_eff = i1 ^ {16{op[0]}};              // invert B when subtracting
+  wire [16:0] sum   = {1'b0, i0} + {1'b0, b_eff} + op[0];   // cin = op[0]
+
+  always @(*) begin
+    carry = 1'b0;  overflow = 1'b0;
+    case (op)
+      2'b00, 2'b01: begin
+        o     = sum[15:0];
+        carry = sum[16];
+        overflow = (i0[15] == b_eff[15]) &amp;&amp; (o[15] != i0[15]);
+      end
+      2'b10: o = i0 &amp; i1;
+      2'b11: o = i0 | i1;
+    endcase
+  end
+endmodule
+
+module tb_alu;
+  reg [15:0] i0, i1; reg [1:0] op; wire [15:0] o; wire carry, overflow;
+  alu dut (i0, i1, op, o, carry, overflow);
+  initial begin
+    $dumpfile("alu_tb.vcd"); $dumpvars(0, tb_alu);
+    $monitor("op=%b i0=%h i1=%h -&gt; o=%h c=%b v=%b", op, i0, i1, o, carry, overflow);
+    op=2'b00; i0=16'h7FFF; i1=16'h0001; #10;   // add, overflow
+    op=2'b01; i0=16'h0005; i1=16'h0007; #10;   // sub
+    op=2'b10; i0=16'hF0F0; i1=16'h0FF0; #10;   // and
+    op=2'b11; i0=16'hF0F0; i1=16'h0FF0; #10;   // or
+    $finish;
+  end
+endmodule</code></pre>
+    <h2 id="mcqs--lab-7">MCQs — Lab 7</h2>
+    <p><strong>Q1.</strong> <code>op = 2'b01</code> selects:</p>
+    <ul>
+      <li>A) add B) subtract C) AND D) OR</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q2.</strong> <code>op = 2'b10</code> and <code>2'b11</code> correspond to:</p>
+    <ul>
+      <li>A) OR, AND B) AND, OR C) ADD, SUB D) SUB, ADD</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q3.</strong> Two's complement of B is:</p>
+    <ul>
+      <li>A) <code>~B</code> B) <code>~B + 1</code> C) <code>B + 1</code> D) <code>-~B</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q4.</strong> Subtraction A − B in hardware is computed as:</p>
+    <ul>
+      <li>A) <code>A + B</code> B) <code>A + ~B</code> C) <code>A + ~B + 1</code> D) <code>~A + B</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q5.</strong> To reuse one adder for add/sub, B is XORed with <code>{16{op[0]}}</code> and Cin is set to:
+    </p>
+    <ul>
+      <li>A) 0 B) 1 C) <code>op[0]</code> D) <code>op[1]</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q6.</strong> Signed range of a 16-bit two's complement number:</p>
+    <ul>
+      <li>A) 0 to 65535 B) −32767 to 32767 C) −32768 to 32767 D) −65536 to 65535</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q7.</strong> <code>16'h7FFF + 16'h0001</code> gives:</p>
+    <ul>
+      <li>A) <code>o=8000, carry=0, overflow=1</code></li>
+      <li>B) <code>o=8000, carry=1, overflow=0</code></li>
+      <li>C) <code>o=0000, carry=1, overflow=1</code></li>
+      <li>D) <code>o=7FFF, overflow=0</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — positive + positive = negative → signed overflow; no carry-out.</p>
+    </details>
+
+    <p><strong>Q8.</strong> <code>16'hFFFF + 16'h0001</code> gives:</p>
+    <ul>
+      <li>A) <code>o=0000, carry=1, overflow=0</code></li>
+      <li>B) <code>o=0000, carry=0, overflow=1</code></li>
+      <li>C) <code>o=0000, carry=1, overflow=1</code></li>
+      <li>D) <code>o=FFFF, carry=0</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — (−1) + 1 = 0: no signed overflow, but carry-out in unsigned view.</p>
+    </details>
+
+    <p><strong>Q9.</strong> Signed overflow in addition occurs when:</p>
+    <ul>
+      <li>A) Operands have different signs</li>
+      <li>B) Operands have the same sign and the result has the opposite sign</li>
+      <li>C) Result is zero</li>
+      <li>D) Carry-out is always 1</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q10.</strong> Overflow can also be detected as:</p>
+    <ul>
+      <li>A) carry-in to MSB XOR carry-out of MSB</li>
+      <li>B) carry-in to MSB AND carry-out</li>
+      <li>C) carry-out OR carry-in</li>
+      <li>D) MSB of A XOR MSB of B</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q11.</strong> Correct command to compile the ALU and its testbench:</p>
+    <ul>
+      <li>A) <code>vvp test Lab7_alu.v Lab7_alu_tb.v</code></li>
+      <li>B) <code>iverilog -o test Lab7_alu.v Lab7_alu_tb.v</code></li>
+      <li>C) <code>gtkwave test</code></li>
+      <li>D) <code>iverilog test</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q12.</strong> The command that executes the compiled simulation:</p>
+    <ul>
+      <li>A) <code>vvp test</code> B) <code>iverilog test</code> C) <code>run test</code> D) <code>gtkwave test</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q13.</strong> Command to view the waveforms:</p>
+    <ul>
+      <li>A) <code>gtkwave alu_tb.vcd</code> B) <code>vvp alu_tb.vcd</code> C) <code>iverilog alu_tb.vcd</code> D)
+        <code>cat alu_tb.vcd</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q14.</strong> Width of the temporary used to capture a 16-bit add together with its carry:</p>
+    <ul>
+      <li>A) 15 B) 16 C) 17 D) 32</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — <code>{carry, o} = i0 + i1;</code> needs 17 bits.</p>
+    </details>
+
+    <p><strong>Q15.</strong> <code>16'h0005 − 16'h0007</code> (op=01) gives:</p>
+    <ul>
+      <li>A) <code>o=FFFE, carry=0</code> B) <code>o=FFFE, carry=1</code> C) <code>o=0002, carry=0</code> D)
+        <code>o=0002, carry=1</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — 5 + FFF8 + 1 = 0xFFFE (−2). No carry-out ⇒ borrow occurred.</p>
+    </details>
+
+    <p><strong>Q16.</strong> <code>16'h8000 − 16'h0001</code> (op=01) gives:</p>
+    <ul>
+      <li>A) <code>o=7FFF, overflow=1</code> B) <code>o=7FFF, overflow=0</code> C) <code>o=8001, overflow=0</code> D)
+        <code>o=FFFF, overflow=1</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — (−32768) − 1 underflows to +32767 → overflow.</p>
+    </details>
+
+    <p><strong>Q17.</strong> <code>16'hF0F0 &amp; 16'h0FF0</code> =</p>
+    <ul>
+      <li>A) FFF0 B) 00F0 C) FF00 D) 0000</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q18.</strong> <code>16'hF0F0 | 16'h0FF0</code> =</p>
+    <ul>
+      <li>A) FFF0 B) 00F0 C) FF00 D) 0FF0</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q19.</strong> The ALU in this lab is:</p>
+    <ul>
+      <li>A) Sequential with a clock</li>
+      <li>B) Purely combinational</li>
+      <li>C) A finite state machine</li>
+      <li>D) Uses latches only</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q20.</strong> Which statement selects the operation inside the ALU's behavioural description?</p>
+    <ul>
+      <li>A) <code>case (op)</code> B) <code>if (clk)</code> C) <code>generate</code> D) <code>fork</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — case on <code>op[1:0]</code> with <code>2'b00</code>…<code>2'b11</code> items.
+        (<code>always @(*)</code> makes it combinational.)</p>
+    </details>
+
+    <hr>
+    <h1 id="lab-8--32-bit-comparators">LAB 8 — 32-bit Comparators</h1>
+    <h2 id="concepts-6">Concepts</h2>
+    <ul>
+      <li>Six comparators on 32-bit <code>A</code>, <code>B</code>: <code>==</code>, <code>!=</code>, <code>&gt;</code>,
+        <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>. Each output is <strong>1 bit</strong>.
+      </li>
+      <li>For any pair, exactly one of <code>A&gt;B</code>, <code>A==B</code>, <code>A&lt;B</code> is 1.</li>
+      <li>Relations: <code>ne = ~eq</code>, <code>ge = ~lt</code>, <code>le = ~gt</code>, <code>ge = gt | eq</code>,
+        <code>le = lt | eq</code>.
+      </li>
+      <li>Vectors are <strong>unsigned</strong> by default. For signed: <code>$signed(A) &lt; $signed(B)</code> or
+        declare <code>input signed [31:0]</code>.</li>
+      <li><code>==</code> returns <code>x</code> if any bit is x/z; <code>===</code> compares exactly (including x/z)
+        and returns 0/1.</li>
+      <li>Gate-style equality: <code>eq = &amp;(~(A ^ B))</code> (all XNORs ANDed) or <code>~|(A ^ B)</code>.</li>
+      <li>Exhaustive testing impossible (2⁶⁴ pairs) → <strong>directed corner cases + <code>$random</code></strong>.
+      </li>
+    </ul>
+    <h2 id="code-6">Code</h2>
+    <pre><code class="hljs plaintext">module cmp32 (input [31:0] A, B,
+              output eq, ne, gt, ge, lt, le);
+  assign eq = (A == B);
+  assign ne = (A != B);
+  assign gt = (A &gt;  B);
+  assign ge = (A &gt;= B);
+  assign lt = (A &lt;  B);
+  assign le = (A &lt;= B);
+endmodule
+
+// separate module example — equality only
+module eq32 (input [31:0] A, B, output eq);
+  assign eq = ~|(A ^ B);       // XOR=0 on every bit
+endmodule
+
+module tb_cmp;
+  reg [31:0] A, B; wire eq, ne, gt, ge, lt, le; integer i;
+  cmp32 dut (A,B,eq,ne,gt,ge,lt,le);
+  initial begin
+    $monitor("A=%h B=%h eq=%b ne=%b gt=%b ge=%b lt=%b le=%b",A,B,eq,ne,gt,ge,lt,le);
+    A=32'd10; B=32'd10; #5;                     // equal
+    A=32'hFFFFFFFF; B=32'h00000001; #5;         // A&gt;B (unsigned)
+    A=32'h00000000; B=32'hFFFFFFFF; #5;         // A&lt;B
+    for (i=0;i&lt;5;i=i+1) begin A=$random; B=$random; #5; end
+    $finish;
+  end
+endmodule</code></pre>
+    <h2 id="mcqs--lab-8">MCQs — Lab 8</h2>
+    <p><strong>Q1.</strong> Declaration of a 32-bit input <code>A</code>:</p>
+    <ul>
+      <li>A) <code>input A[32];</code> B) <code>input [31:0] A;</code> C) <code>input [32:0] A;</code> D)
+        <code>input 32 A;</code>
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q2.</strong> Verilog operator for "not equal":</p>
+    <ul>
+      <li>A) <code>&lt;&gt;</code> B) <code>=/=</code> C) <code>!=</code> D) <code>~=</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q3.</strong> If A = B, which outputs are 1?</p>
+    <ul>
+      <li>A) eq, ge, le B) eq, gt, lt C) ne, ge, le D) eq only</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — gt = lt = ne = 0.</p>
+    </details>
+
+    <p><strong>Q4.</strong> Exactly one of <code>gt</code>, <code>eq</code>, <code>lt</code> is 1 for any pair of
+      numbers. This is because:</p>
+    <ul>
+      <li>A) They are mutually exclusive and exhaustive</li>
+      <li>B) Verilog enforces it</li>
+      <li>C) Only for unsigned</li>
+      <li>D) Only for 32-bit</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q5.</strong> <code>ge</code> can be derived from another comparator output as:</p>
+    <ul>
+      <li>A) <code>~gt</code> B) <code>~lt</code> C) <code>~eq</code> D) <code>gt &amp; eq</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — A ≥ B ⇔ not (A &lt; B).</p>
+    </details>
+
+    <p><strong>Q6.</strong> <code>le</code> equals:</p>
+    <ul>
+      <li>A) <code>~lt</code> B) <code>lt | eq</code> C) <code>gt | eq</code> D) <code>~eq</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> (also <code>~gt</code>).</p>
+    </details>
+
+    <p><strong>Q7.</strong> <code>32'hFFFFFFFF &gt; 32'h00000001</code> for unsigned vectors evaluates to:</p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) 32</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q8.</strong> The same comparison using <code>$signed(...)</code> on both operands evaluates to:</p>
+    <ul>
+      <li>A) 1 B) 0 C) x D) z</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>FFFFFFFF</code> = −1, which is less than +1.</p>
+    </details>
+
+    <p><strong>Q9.</strong> Default interpretation of <code>reg [31:0]</code> / <code>wire [31:0]</code> in comparisons:
+    </p>
+    <ul>
+      <li>A) Signed B) Unsigned C) Sign-magnitude D) Gray code</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q10.</strong> Width of each comparator output:</p>
+    <ul>
+      <li>A) 1 bit B) 32 bits C) 2 bits D) 31 bits</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q11.</strong> Number of distinct input combinations of two 32-bit operands:</p>
+    <ul>
+      <li>A) 2³² B) 2⁶⁴ C) 32² D) 64</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — hence exhaustive simulation is impractical.</p>
+    </details>
+
+    <p><strong>Q12.</strong> A practical test strategy for 32-bit comparators:</p>
+    <ul>
+      <li>A) Exhaustive loop over 2⁶⁴ cases</li>
+      <li>B) Directed corner cases plus random vectors</li>
+      <li>C) A single test case</li>
+      <li>D) No simulation</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q13.</strong> <code>$random</code> returns:</p>
+    <ul>
+      <li>A) 1-bit B) 8-bit unsigned C) 32-bit signed integer D) 64-bit real</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q14.</strong> <code>A == B</code> where A contains an <code>x</code> bit evaluates to:</p>
+    <ul>
+      <li>A) 0 B) 1 C) <code>x</code> D) error</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — use <code>===</code> to compare including x.</p>
+    </details>
+
+    <p><strong>Q15.</strong> <code>4'b10x1 === 4'b10x1</code> evaluates to:</p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) error</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — case equality matches x bit-for-bit.</p>
+    </details>
+
+    <p><strong>Q16.</strong> Equality via reduction: <code>eq = ~|(A ^ B);</code> — this is 1 when:</p>
+    <ul>
+      <li>A) any bit of A and B differ</li>
+      <li>B) all bits of A and B are equal</li>
+      <li>C) A is zero</li>
+      <li>D) B is zero</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — <code>A^B</code> is all zeros ⇒ reduction OR = 0 ⇒ NOT gives 1.</p>
+    </details>
+
+    <p><strong>Q17.</strong> <code>32'd10</code> denotes:</p>
+    <ul>
+      <li>A) 10 as 32-bit decimal B) 10 in binary C) 32 in hex D) 10 bits</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q18.</strong> <code>32'hDEADBEEF</code> has how many hex digits (each 4 bits)?</p>
+    <ul>
+      <li>A) 4 B) 8 C) 16 D) 32</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q19.</strong> For A=32'h80000000 and B=32'h7FFFFFFF as <strong>unsigned</strong>, <code>gt</code> is:</p>
+    <ul>
+      <li>A) 0 B) 1 C) x D) depends on clock</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — 2³¹ &gt; 2³¹−1.</p>
+    </details>
+
+    <p><strong>Q20.</strong> The number of separate comparator functions required in Lab 8:</p>
+    <ul>
+      <li>A) 3 B) 4 C) 6 D) 8</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong> — ==, !=, &gt;, &gt;=, &lt;, &lt;=.</p>
+    </details>
+
+    <hr>
+    <h1 id="lab-9--register-file-8--16-bit">LAB 9 — Register File (8 × 16-bit)</h1>
+    <h2 id="concepts-7">Concepts</h2>
+    <ul>
+      <li><strong>Why:</strong> the ALU can't wait hundreds of cycles for memory; the register file is small, fast
+        storage that feeds the ALU.</li>
+      <li><strong>8 registers × 16 bits</strong>, <strong>2 read ports (a, b)</strong>, <strong>1 write port</strong>.
+        Addresses are 3 bits (0–7).</li>
+      <li><strong>Register 0 is hard-wired zero:</strong> reading address 0 → output 0; writing address 0 → ignored.
+      </li>
+      <li>Inputs: <code>clk, reset, wr, rd_addr_a[2:0], rd_addr_b[2:0], wr_addr[2:0], d_in[15:0]</code>. Outputs:
+        <code>d_out_a[15:0], d_out_b[15:0]</code>.
+      </li>
+      <li><strong>Write:</strong> if <code>wr = 1</code>, at the next posedge <code>regs[wr_addr] &lt;= d_in</code>. If
+        <code>wr = 0</code>, <code>d_in</code>/<code>wr_addr</code> ignored.
+      </li>
+      <li><strong>Read:</strong> at the next posedge, <code>d_out_a</code> = contents of register <code>rd_addr_a</code>
+        (same for b). <em>(Synchronous read, as stated in the problem.)</em></li>
+      <li><strong>Reset = 1:</strong> all registers → 0.</li>
+      <li>Structural version: use <strong><code>dfrl</code></strong> (posedge D-FF with reset and load enable, from
+        <code>lib.v</code>) for registers 1–7; per-register load enable = <code>wr &amp; (wr_addr == i)</code> from a
+        3-to-8 decoder; two <strong>8:1 × 16-bit MUXes</strong> for reads. All <code>clk</code>/<code>reset</code> pins
+        connect to the global ones; <code>d_in</code> goes to every register's D.
+      </li>
+      <li>Flip-flop count = 7 × 16 = <strong>112</strong> (R0 needs none).</li>
+      <li>Memory array syntax: <code>reg [15:0] regs [0:7];</code> (word width first, depth after the name).</li>
+    </ul>
+    <h2 id="code-7">Code</h2>
+    <pre><code class="hljs plaintext">// Behavioural version
+module reg_file (input clk, reset, wr,
+                 input [2:0] rd_addr_a, rd_addr_b, wr_addr,
+                 input [15:0] d_in,
+                 output reg [15:0] d_out_a, d_out_b);
+
+  reg [15:0] regs [1:7];          // R0 is implicit zero
+  integer i;
+
+  always @(posedge clk) begin
+    if (reset) begin
+      for (i = 1; i &lt; 8; i = i + 1) regs[i] &lt;= 16'b0;
+      d_out_a &lt;= 16'b0;
+      d_out_b &lt;= 16'b0;
+    end else begin
+      if (wr &amp;&amp; wr_addr != 3'd0)        // write port (R0 ignored)
+        regs[wr_addr] &lt;= d_in;
+      d_out_a &lt;= (rd_addr_a == 3'd0) ? 16'b0 : regs[rd_addr_a];  // read port a
+      d_out_b &lt;= (rd_addr_b == 3'd0) ? 16'b0 : regs[rd_addr_b];  // read port b
+    end
+  end
+endmodule</code></pre>
+    <p>Structural sketch (port names of <code>dfrl</code> come from the supplied <code>lib.v</code> — check them):</p>
+    <pre><code class="hljs plaintext">// per register i (1..7):   we[i] = wr &amp; (wr_addr == i)
+// dfrl #(16) r1 (.clk(clk), .reset(reset), .load(we[1]), .in(d_in), .out(q1));
+// read mux:  d_out_a = 8:1 MUX(q0=16'b0, q1 ... q7) selected by rd_addr_a</code></pre>
+    <h2 id="mcqs--lab-9">MCQs — Lab 9</h2>
+    <p><strong>Q1.</strong> Size of the register file:</p>
+    <ul>
+      <li>A) 16 × 8 bits as 16 registers B) eight 16-bit registers C) sixteen 8-bit registers D) eight 32-bit registers
+      </li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q2.</strong> Number of bits per register address:</p>
+    <ul>
+      <li>A) 2 B) 3 C) 4 D) 8</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — 8 registers → 3 bits.</p>
+    </details>
+
+    <p><strong>Q3.</strong> Number of read ports and write ports:</p>
+    <ul>
+      <li>A) 1 read, 2 write B) 2 read, 1 write C) 2 read, 2 write D) 1 read, 1 write</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q4.</strong> Reading address 0 returns:</p>
+    <ul>
+      <li>A) the last written value B) all ones C) zero D) x</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>C</strong></p>
+    </details>
+
+    <p><strong>Q5.</strong> Writing data to address 0 with <code>wr = 1</code>:</p>
+    <ul>
+      <li>A) stores data in R0 B) is ignored C) resets the file D) writes to R7</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q6.</strong> A write takes effect when:</p>
+    <ul>
+      <li>A) <code>wr=1</code> at the next positive clock edge</li>
+      <li>B) <code>wr=0</code> at any time</li>
+      <li>C) on the negative edge only</li>
+      <li>D) whenever <code>d_in</code> changes</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q7.</strong> If <code>wr = 0</code>:</p>
+    <ul>
+      <li>A) <code>d_in</code> is written to R0 B) <code>d_in</code> and <code>wr_addr</code> are ignored C) reset
+        occurs D) read ports are disabled</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q8.</strong> <code>dfrl</code> in <code>lib.v</code> stands for a:</p>
+    <ul>
+      <li>A) negative-edge JK flip-flop</li>
+      <li>B) positive-edge D flip-flop with reset and load enable</li>
+      <li>C) D latch with reset</li>
+      <li>D) T flip-flop with set</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q9.</strong> When <code>reset = 1</code> (at a clock edge):</p>
+    <ul>
+      <li>A) All registers are set to all-ones</li>
+      <li>B) All registers are initialised to zero</li>
+      <li>C) Only R0 is cleared</li>
+      <li>D) Nothing happens</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q10.</strong> Correct declaration of eight 16-bit registers as an array:</p>
+    <ul>
+      <li>A) <code>reg [15:0] regs [0:7];</code></li>
+      <li>B) <code>reg regs [15:0][7:0];</code></li>
+      <li>C) <code>wire [7:0] regs [0:15];</code></li>
+      <li>D) <code>reg [7:0] regs [15:0];</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q11.</strong> In the structural design, the per-register load enable is generated from:</p>
+    <ul>
+      <li>A) <code>wr</code> AND decoded <code>wr_addr</code></li>
+      <li>B) <code>rd_addr_a</code> only</li>
+      <li>C) <code>clk</code></li>
+      <li>D) <code>reset</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong> — a 3-to-8 decoder on <code>wr_addr</code>, gated with <code>wr</code>.</p>
+    </details>
+
+    <p><strong>Q12.</strong> Read ports are implemented in hardware with:</p>
+    <ul>
+      <li>A) Decoders B) 8:1 multiplexers (16 bits wide) C) Encoders D) Adders</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q13.</strong> Minimum number of 1-bit flip-flops needed (R0 hard-wired to zero):</p>
+    <ul>
+      <li>A) 128 B) 112 C) 96 D) 16</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — 7 × 16.</p>
+    </details>
+
+    <p><strong>Q14.</strong> In the file, which connection is common to <em>every</em> <code>dfrl</code> instance?</p>
+    <ul>
+      <li>A) Same load enable B) Same global <code>clk</code> and <code>reset</code> C) Different clocks D) Same Q
+        output</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — and the same <code>d_in</code> on D; only the load enable differs.</p>
+    </details>
+
+    <p><strong>Q15.</strong> Which assignment is used for writing the registers in the clocked <code>always</code>
+      block?</p>
+    <ul>
+      <li>A) <code>=</code> B) <code>&lt;=</code> C) <code>assign</code> D) <code>force</code></li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q16.</strong> <code>regs[3] = 16'hABCD</code>, <code>rd_addr_a = 3</code>. After the next posedge,
+      <code>d_out_a =</code>
+    </p>
+    <ul>
+      <li>A) 0000 B) ABCD C) FFFF D) x</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q17.</strong> Same cycle: <code>wr=1, wr_addr=3, d_in=1111</code> while <code>rd_addr_a=3</code> (old
+      regs[3]=ABCD). With non-blocking assignments, <code>d_out_a</code> after the edge shows:</p>
+    <ul>
+      <li>A) 1111 B) ABCD (old value) C) 0000 D) x</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — the read samples the pre-edge value; new data appears on the next read.</p>
+    </details>
+
+    <p><strong>Q18.</strong> Write <code>1234</code> to R5, then read with <code>rd_addr_a=5</code>,
+      <code>rd_addr_b=0</code>. Outputs <code>(d_out_a, d_out_b)</code> are:
+    </p>
+    <ul>
+      <li>A) (1234, 1234) B) (1234, 0000) C) (0000, 1234) D) (0000, 0000)</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong></p>
+    </details>
+
+    <p><strong>Q19.</strong> Main reason microprocessors use a register file:</p>
+    <ul>
+      <li>A) To avoid waiting hundreds of cycles for main memory access by the ALU</li>
+      <li>B) To replace the ALU</li>
+      <li>C) To store programs permanently</li>
+      <li>D) To generate the clock</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>A</strong></p>
+    </details>
+
+    <p><strong>Q20.</strong> Number of write operations possible per clock cycle:</p>
+    <ul>
+      <li>A) 0 B) 1 C) 2 D) 8</li>
+    </ul>
+    <details>
+      <summary>Answer</summary>
+
+      <p><strong>B</strong> — only one write port (but two reads may happen in the same cycle).</p>
+    </details>
+
+    <hr>
+    <p><em>End of file — good luck with the lab test!</em></p>
+
+  </article>
+  <script>
+    function fitMarkdownExportToContent() {
+      var article = document.querySelector('.markdown-body');
+      if (!article) return;
+
+      article.style.width = '';
+      article.style.maxWidth = '980px';
+
+      var overflow = article.scrollWidth - article.clientWidth;
+      if (overflow <= 1) return;
+
+      var styles = window.getComputedStyle(article);
+      var paddingLeft = parseFloat(styles.paddingLeft) || 0;
+      var paddingRight = parseFloat(styles.paddingRight) || 0;
+      var borderRight = parseFloat(styles.borderRightWidth) || 0;
+      var borderLeft = parseFloat(styles.borderLeftWidth) || 0;
+      var boxSizing = styles.boxSizing;
+
+      var requiredWidth = boxSizing === 'border-box'
+        ? Math.ceil(article.scrollWidth + borderLeft + borderRight)
+        : Math.ceil(article.scrollWidth - paddingLeft - paddingRight);
+
+      article.style.width = requiredWidth + 'px';
+      article.style.maxWidth = 'none';
+    }
+
+    function queueMarkdownExportFit() {
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(fitMarkdownExportToContent);
+      });
+    }
+
+    window.addEventListener('load', function () {
+      var mathReady = Promise.resolve();
+      var article = document.querySelector('.markdown-body');
+      if (article && window.MutationObserver) {
+        new MutationObserver(queueMarkdownExportFit).observe(article, {
+          childList: true,
+          subtree: true
+        });
+      }
+      if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
+        mathReady = window.MathJax.typesetPromise().catch(function (err) {
+          console.warn('MathJax typeset failed:', err);
+        });
+      }
+      if (window.mermaid) {
+        try {
+          window.mermaid.initialize({
+            startOnLoad: false,
+            theme: 'default',
+            securityLevel: 'loose',
+            gantt: { useWidth: 1200 }
+          });
+          var mermaidNodes = document.querySelectorAll('.mermaid');
+          if (mermaidNodes.length > 0) {
+            mermaidNodes.forEach(function (node) {
+              var rawCode = node.getAttribute('data-original-code');
+              if (rawCode) {
+                try { node.textContent = decodeURIComponent(rawCode); } catch (_) { }
+              }
+            });
+            if (typeof window.mermaid.run === 'function') {
+              window.mermaid.run({
+                nodes: Array.from(mermaidNodes)
+              }).then(function () {
+                queueMarkdownExportFit();
+              }).catch(function (err) {
+                console.warn('Mermaid run error:', err);
+              });
+            } else if (typeof window.mermaid.init === 'function') {
+              window.mermaid.init(undefined, mermaidNodes);
+            }
+          }
+        } catch (e) {
+          console.warn('Mermaid initialization failed:', e);
+        }
+      }
+      if (window.ABCJS) {
+        try {
+          var abcNodes = document.querySelectorAll('.abc-notation');
+          abcNodes.forEach(function (node) {
+            var code = decodeURIComponent(node.getAttribute('data-original-code') || '');
+            if (code) {
+              ABCJS.renderAbc(node.id, code, { responsive: 'resize' });
+            }
+            var container = node.closest('.abc-container');
+            if (container) container.classList.remove('is-loading');
+          });
+        } catch (e) {
+          console.warn('ABCJS rendering failed:', e);
+        }
+      }
+      mathReady.finally(queueMarkdownExportFit);
+      queueMarkdownExportFit();
+    });
+    window.addEventListener('resize', queueMarkdownExportFit);
+  </script>
+
+</body>
+
+</html>
